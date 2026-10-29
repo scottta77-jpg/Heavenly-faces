@@ -932,7 +932,14 @@ function setup3DTiltCursorEffects() {
  * Variable Font Weight Shift on Horizontal Cursor Movement (Webflow a-163)
  */
 function setupVariableFontCursorEffect() {
-  const headings = document.querySelectorAll('.heading.is-header-video-1-title-1, .heading.is-content-grid-1-title, .heading.is-header-4-title-1');
+  const headings = document.querySelectorAll(
+    '.heading.is-header-video-1-title-1, ' +
+    '.heading.is-header-slider-2-title-2, ' +
+    '.heading.is-content-grid-1-title, ' +
+    '.heading.is-header-4-title-1, ' +
+    '.heading.is-small-title, ' +
+    '.listing-heading-uni-1'
+  );
   if (headings.length === 0) return;
 
   let ticking = false;
@@ -955,6 +962,50 @@ function setupVariableFontCursorEffect() {
   }, { passive: true });
 }
 
+/**
+ * Interactive Cursor Physics on Listing Cards (Products Types & Listing grids)
+ */
+function setupListingCardsHoverPhysics() {
+  const listingCards = document.querySelectorAll('.listing-1-link, .listing-2-link-block-2');
+
+  listingCards.forEach(card => {
+    const content = card.querySelector('.listing-1-content, .listing-2-content-2');
+    const button = card.querySelector('.main-button, .listing-button');
+    const img = card.querySelector('.cover-image');
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const normX = Math.max(-1, Math.min(1, (e.clientX - centerX) / (rect.width / 2)));
+      const normY = Math.max(-1, Math.min(1, (e.clientY - centerY) / (rect.height / 2)));
+
+      if (content) {
+        content.style.transform = `translate3d(${normX * 8}px, ${normY * 6 - 4}px, 0)`;
+      }
+      if (button) {
+        button.style.transform = `translate3d(${normX * 12}px, ${normY * 8 - 2}px, 0)`;
+      }
+      if (img) {
+        img.style.transform = `scale(1.05) translate3d(${normX * -4}px, ${normY * -4 - 8}px, 0)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (content) {
+        content.style.transform = 'translate3d(0, 0, 0)';
+      }
+      if (button) {
+        button.style.transform = 'translate3d(0, 0, 0)';
+      }
+      if (img) {
+        img.style.transform = 'translate3d(0, 0, 0) scale(1)';
+      }
+    });
+  });
+}
+
 // -------------------------------------------------------------
 // 9. INITIALIZE ON DOM READY
 // -------------------------------------------------------------
@@ -967,5 +1018,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupForms();
   setupBeautyRoutineScroll();
   setupCursorAnimations();
+  setupListingCardsHoverPhysics();
 });
+
 
