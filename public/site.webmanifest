@@ -1,0 +1,21 @@
+{
+  "name": "Heavenly Faces Aesthetics",
+  "short_name": "Heavenly Faces",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#ecfcfc",
+  "background_color": "#ecfcfc",
+  "display": "standalone"
+}
