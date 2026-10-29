@@ -136,21 +136,21 @@ class CartManager {
   }
 
   openCart() {
-    const cartWrapper = document.querySelector('.cart-wrapper');
-    if (cartWrapper) {
-      cartWrapper.style.display = 'flex';
-      cartWrapper.classList.add('w--open');
-      document.body.style.overflow = 'hidden';
-    }
+    const cartWrappers = document.querySelectorAll('.cart-wrapper, .w-commerce-commercecartcontainerwrapper');
+    cartWrappers.forEach(cw => {
+      cw.style.setProperty('display', 'flex', 'important');
+      cw.classList.add('w--open');
+    });
+    document.body.style.overflow = 'hidden';
   }
 
   closeCart() {
-    const cartWrapper = document.querySelector('.cart-wrapper');
-    if (cartWrapper) {
-      cartWrapper.style.display = 'none';
-      cartWrapper.classList.remove('w--open');
-      document.body.style.overflow = '';
-    }
+    const cartWrappers = document.querySelectorAll('.cart-wrapper, .w-commerce-commercecartcontainerwrapper');
+    cartWrappers.forEach(cw => {
+      cw.style.setProperty('display', 'none', 'important');
+      cw.classList.remove('w--open');
+    });
+    document.body.style.overflow = '';
   }
 
   showToast(message) {
@@ -203,23 +203,25 @@ class CartManager {
     });
 
     // Close cart buttons
-    const cartCloseBtns = document.querySelectorAll('[data-node-type="commerce-cart-close-link"], .w-commerce-commercecartcloselink');
+    const cartCloseBtns = document.querySelectorAll('[data-node-type="commerce-cart-close-link"], .w-commerce-commercecartcloselink, .close-button-2');
     cartCloseBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         this.closeCart();
       });
     });
 
-    // Close on backdrop click
-    const cartWrapper = document.querySelector('.cart-wrapper');
-    if (cartWrapper) {
-      cartWrapper.addEventListener('click', (e) => {
-        if (e.target === cartWrapper) {
+    // Close on backdrop click (click outside modal box)
+    const cartWrappers = document.querySelectorAll('.cart-wrapper, .w-commerce-commercecartcontainerwrapper');
+    cartWrappers.forEach(wrapper => {
+      wrapper.addEventListener('click', (e) => {
+        const cartBox = wrapper.querySelector('.cart-container, .w-commerce-commercecartcontainer');
+        if (e.target === wrapper || (cartBox && !cartBox.contains(e.target))) {
           this.closeCart();
         }
       });
-    }
+    });
 
     // ESC key closes cart & menu
     document.addEventListener('keydown', (e) => {
