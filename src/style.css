@@ -380,22 +380,88 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Products Types Listing 1 Cards Hover States */
+/* =============================================================
+   HERO IMAGE SLIDER (Products Types, Categories, Face Care)
+   ============================================================= */
+.header-slider-2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-absolute-block {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.slider-image-1,
+.slider-image-2,
+.slider-image-3 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.slider-bg-for-interaction {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--purple-black, #15112a);
+  z-index: 15;
+  pointer-events: none;
+  display: block !important;
+  transform: translate3d(0%, 0, 0);
+  will-change: transform;
+}
+
+.slide-timeline {
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(51, 40, 100, 0.25);
+}
+
+.slider-timeline-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--midnight-purple, #332864);
+  transform: translate3d(-100%, 0, 0);
+  will-change: transform;
+}
+
+/* =============================================================
+   LISTING-1 CARDS (Product Types Cards) HOVER & REVEAL
+   ============================================================= */
 .listing-1-link {
   cursor: pointer;
   position: relative;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.listing-1-link .parallax-animation {
   overflow: hidden;
-  display: block;
-  text-decoration: none;
+  position: absolute;
+  inset: 0;
 }
 
 .listing-1-link .cover-image {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform;
 }
 
 .listing-1-link:hover .cover-image {
-  transform: scale(1.05) translateY(-2%);
+  transform: translate3d(0, -7%, 0) scale(1.05) !important;
 }
 
 .listing-1-link .listing-1-content {
@@ -408,21 +474,50 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
 }
 
 .listing-1-link .main-button.is-light {
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .listing-1-link:hover .main-button.is-light {
-  background-color: var(--main-background, #f8ecf3);
-  color: var(--midnight-purple, #332864);
+  background-color: var(--main-background, #f8ecf3) !important;
+  color: var(--midnight-purple, #332864) !important;
   transform: translateY(-2px);
 }
 
-.listing-1-link .listing-1-bg {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+.listing-1-link:hover .main-button.is-light .button-text {
+  color: var(--midnight-purple, #332864) !important;
 }
 
-.listing-1-link:hover .listing-1-bg {
-  opacity: 0.85;
+/* =============================================================
+   CONCENTRIC PULSING ELLIPSES
+   ============================================================= */
+@keyframes elipseRipple {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.35;
+  }
+}
+
+.elipse.with-animation .elipse.is-2nd {
+  opacity: 0.6 !important;
+  animation: elipseRipple 3.5s ease-in-out infinite;
+}
+
+.elipse.with-animation .elipse.is-3rd {
+  opacity: 0.4 !important;
+  animation: elipseRipple 3.5s ease-in-out infinite 1.75s;
+}
+
+/* Accordion Smooth Styling */
+.accordion-content {
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 

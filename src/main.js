@@ -517,42 +517,60 @@ function closeFullscreenMenu() {
 function setupDropdowns() {
   const dropdowns = document.querySelectorAll('.w-dropdown');
   dropdowns.forEach(dropdown => {
+    const isAccordion = dropdown.classList.contains('accordion');
+    const isHover = dropdown.getAttribute('data-hover') !== 'false' && !isAccordion;
     const toggle = dropdown.querySelector('.w-dropdown-toggle');
     const list = dropdown.querySelector('.w-dropdown-list');
     if (!toggle || !list) return;
 
     let timeout;
 
-    // Hover interaction
-    dropdown.addEventListener('mouseenter', () => {
-      clearTimeout(timeout);
-      closeAllDropdowns(dropdown);
-      dropdown.classList.add('w--open');
-      toggle.classList.add('w--open');
-      list.classList.add('w--open');
-      list.style.display = 'block';
-    });
+    if (isHover) {
+      // Hover interaction for nav dropdowns
+      dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(timeout);
+        closeAllDropdowns(dropdown);
+        dropdown.classList.add('w--open');
+        toggle.classList.add('w--open');
+        list.classList.add('w--open');
+        list.style.display = 'block';
+      });
 
-    dropdown.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        dropdown.classList.remove('w--open');
-        toggle.classList.remove('w--open');
-        list.classList.remove('w--open');
-        list.style.display = 'none';
-      }, 150);
-    });
+      dropdown.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          dropdown.classList.remove('w--open');
+          toggle.classList.remove('w--open');
+          list.classList.remove('w--open');
+          list.style.display = 'none';
+        }, 150);
+      });
+    }
 
     // Click toggle
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       const isOpen = list.classList.contains('w--open');
-      closeAllDropdowns();
-      if (!isOpen) {
-        dropdown.classList.add('w--open');
-        toggle.classList.add('w--open');
-        list.classList.add('w--open');
-        list.style.display = 'block';
+      if (isAccordion) {
+        if (isOpen) {
+          dropdown.classList.remove('w--open');
+          toggle.classList.remove('w--open');
+          list.classList.remove('w--open');
+          list.style.display = 'none';
+        } else {
+          dropdown.classList.add('w--open');
+          toggle.classList.add('w--open');
+          list.classList.add('w--open');
+          list.style.display = 'block';
+        }
+      } else {
+        closeAllDropdowns();
+        if (!isOpen) {
+          dropdown.classList.add('w--open');
+          toggle.classList.add('w--open');
+          list.classList.add('w--open');
+          list.style.display = 'block';
+        }
       }
     });
   });
@@ -563,7 +581,7 @@ function setupDropdowns() {
 }
 
 function closeAllDropdowns(except = null) {
-  document.querySelectorAll('.w-dropdown').forEach(d => {
+  document.querySelectorAll('.w-dropdown:not(.accordion)').forEach(d => {
     if (d !== except) {
       d.classList.remove('w--open');
       const t = d.querySelector('.w-dropdown-toggle');
@@ -611,6 +629,16 @@ function setupSmoothScroll() {
 // 6. SCROLL REVEAL & LUXURY PARALLAX EFFECTS
 // -------------------------------------------------------------
 function setupScrollAnimations() {
+  // Animate hero heading immediately on page load
+  const heroHeading = document.querySelector('.heading.is-header-slider-2-title-2');
+  if (heroHeading) {
+    heroHeading.style.transition = 'opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1)';
+    requestAnimationFrame(() => {
+      heroHeading.style.opacity = '1';
+      heroHeading.style.transform = 'translateY(0)';
+    });
+  }
+
   const hiddenElements = document.querySelectorAll('[style*="opacity:0"], [style*="opacity: 0"]');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -622,21 +650,25 @@ function setupScrollAnimations() {
       }
     });
   }, {
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.1
+    rootMargin: '50px 0px -50px 0px',
+    threshold: 0.05
   });
 
   hiddenElements.forEach(el => {
-    el.style.transform = 'translateY(24px)';
-    observer.observe(el);
+    if (el !== heroHeading) {
+      el.style.transform = 'translateY(24px)';
+      observer.observe(el);
+    }
   });
 
-  // Parallax on scroll for luxury images
+  // Parallax on scroll for luxury images (preserve hover state)
   const parallaxImages = document.querySelectorAll('.cover-image.is-parallax, .cover-image.is-parallax-medium');
   if (parallaxImages.length > 0) {
     window.addEventListener('scroll', () => {
-      const scrollY = window.pageYOffset;
       parallaxImages.forEach(img => {
+        const link = img.closest('.listing-1-link');
+        if (link && link.matches(':hover')) return;
+
         const rect = img.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           const shift = (rect.top - window.innerHeight / 2) * 0.08;
@@ -933,12 +965,7 @@ function setup3DTiltCursorEffects() {
  */
 function setupVariableFontCursorEffect() {
   const headings = document.querySelectorAll(
-    '.heading.is-header-video-1-title-1, ' +
-    '.heading.is-header-slider-2-title-2, ' +
-    '.heading.is-content-grid-1-title, ' +
-    '.heading.is-header-4-title-1, ' +
-    '.heading.is-small-title, ' +
-    '.listing-heading-uni-1'
+    '.heading.is-header-video-1-title-1, .heading.is-content-grid-1-title, .heading.is-header-4-title-1, .heading.is-header-slider-2-title-2, .listing-heading-uni-1'
   );
   if (headings.length === 0) return;
 
@@ -962,52 +989,163 @@ function setupVariableFontCursorEffect() {
   }, { passive: true });
 }
 
-/**
- * Interactive Cursor Physics on Listing Cards (Products Types & Listing grids)
- */
-function setupListingCardsHoverPhysics() {
-  const listingCards = document.querySelectorAll('.listing-1-link, .listing-2-link-block-2');
+// -------------------------------------------------------------
+// 9. HERO IMAGE SLIDER ENGINE (Webflow a-63 Replication)
+// -------------------------------------------------------------
+function setupHeroImageSlider() {
+  const sliderContainers = document.querySelectorAll('.header-slider-2, .slider');
+  if (sliderContainers.length === 0) return;
 
-  listingCards.forEach(card => {
-    const content = card.querySelector('.listing-1-content, .listing-2-content-2');
-    const button = card.querySelector('.main-button, .listing-button');
-    const img = card.querySelector('.cover-image');
+  // Find slider instance (in header-slider-2 or .slider)
+  const headerSlider = document.querySelector('.header-slider-2') || document.querySelector('.slider');
+  if (!headerSlider) return;
 
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
+  const img1 = headerSlider.querySelector('.slider-image-1');
+  const img2 = headerSlider.querySelector('.slider-image-2');
+  const img3 = headerSlider.querySelector('.slider-image-3');
+  const images = [img1, img2, img3].filter(Boolean);
 
-      const normX = Math.max(-1, Math.min(1, (e.clientX - centerX) / (rect.width / 2)));
-      const normY = Math.max(-1, Math.min(1, (e.clientY - centerY) / (rect.height / 2)));
+  const timelineBg = headerSlider.querySelector('.slider-timeline-bg') || document.querySelector('.slider-timeline-bg');
+  const wipeBg = headerSlider.querySelector('.slider-bg-for-interaction');
 
-      if (content) {
-        content.style.transform = `translate3d(${normX * 8}px, ${normY * 6 - 4}px, 0)`;
-      }
-      if (button) {
-        button.style.transform = `translate3d(${normX * 12}px, ${normY * 8 - 2}px, 0)`;
-      }
-      if (img) {
-        img.style.transform = `scale(1.05) translate3d(${normX * -4}px, ${normY * -4 - 8}px, 0)`;
-      }
-    });
+  if (images.length === 0) return;
 
-    card.addEventListener('mouseleave', () => {
-      if (content) {
-        content.style.transform = 'translate3d(0, 0, 0)';
-      }
-      if (button) {
-        button.style.transform = 'translate3d(0, 0, 0)';
-      }
-      if (img) {
-        img.style.transform = 'translate3d(0, 0, 0) scale(1)';
-      }
-    });
+  // Webflow IX2 exact timings
+  const DURATION_ZOOM = 4200; // 4.2s zoom-out and timeline progress
+  const DURATION_WIPE = 1400; // 1.4s wipe sweep transition
+
+  // Initial setup for wipe curtain
+  if (wipeBg) {
+    wipeBg.style.display = 'block';
+    wipeBg.style.position = 'absolute';
+    wipeBg.style.inset = '0';
+    wipeBg.style.zIndex = '15';
+    wipeBg.style.backgroundColor = 'var(--purple-black, #15112a)';
+    wipeBg.style.transform = 'translate3d(0%, 0, 0)';
+    wipeBg.style.willChange = 'transform';
+    wipeBg.style.pointerEvents = 'none';
+  }
+
+  // Initial setup for slide images
+  images.forEach((img, i) => {
+    img.style.position = 'absolute';
+    img.style.inset = '0';
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover';
+    img.style.pointerEvents = 'none';
+    img.style.willChange = 'transform, opacity';
+    if (i === 0) {
+      img.style.display = 'block';
+      img.style.opacity = '1';
+      img.style.zIndex = '5';
+      img.style.transform = 'scale(1.25)';
+    } else {
+      img.style.display = 'none';
+      img.style.opacity = '0';
+      img.style.zIndex = '4';
+      img.style.transform = 'scale(1.25)';
+    }
   });
+
+  let currentIndex = 0;
+  let isRunning = true;
+  let zoomTimeout = null;
+  let wipeTimeout = null;
+
+  function playSlide(index) {
+    if (!isRunning) return;
+
+    const currentImg = images[index];
+
+    // Ensure current image is active and placed above background layers
+    images.forEach((img, i) => {
+      if (i === index) {
+        img.style.display = 'block';
+        img.style.opacity = '1';
+        img.style.zIndex = '6';
+      } else {
+        img.style.zIndex = '4';
+      }
+    });
+
+    // 1. Reset current image to scale(1.25) without transition
+    currentImg.style.transition = 'none';
+    currentImg.style.transform = 'scale(1.25)';
+    currentImg.offsetHeight; // force reflow
+
+    // 2. Start smooth zoom-out: scale(1.25) -> scale(1.0)
+    currentImg.style.transition = `transform ${DURATION_ZOOM}ms cubic-bezier(0.075, 0.82, 0.165, 1)`;
+    currentImg.style.transform = 'scale(1.0)';
+
+    // 3. Reset and animate timeline progress bar
+    if (timelineBg) {
+      timelineBg.style.transition = 'none';
+      timelineBg.style.transform = 'translate3d(-100%, 0, 0)';
+      timelineBg.offsetHeight; // force reflow
+      timelineBg.style.transition = `transform ${DURATION_ZOOM}ms linear`;
+      timelineBg.style.transform = 'translate3d(0%, 0, 0)';
+    }
+
+    // 4. Wipe out curtain overlay to reveal current image
+    if (wipeBg) {
+      wipeBg.style.transition = `transform ${DURATION_WIPE}ms cubic-bezier(0.85, 0, 0.15, 1)`;
+      wipeBg.style.transform = 'translate3d(100%, 0, 0)';
+    }
+
+    // 5. When zoom ends, initiate wipe-in transition to cover slide
+    zoomTimeout = setTimeout(() => {
+      if (!isRunning) return;
+
+      // Reset wipeBg off-screen to the left (-100%) instantly
+      if (wipeBg) {
+        wipeBg.style.transition = 'none';
+        wipeBg.style.transform = 'translate3d(-100%, 0, 0)';
+        wipeBg.offsetHeight; // force reflow
+        wipeBg.style.transition = `transform ${DURATION_WIPE}ms cubic-bezier(0.85, 0, 0.15, 1)`;
+        wipeBg.style.transform = 'translate3d(0%, 0, 0)';
+      }
+
+      // Timeline bar exits out to the right (101%)
+      if (timelineBg) {
+        timelineBg.style.transition = `transform ${DURATION_WIPE}ms cubic-bezier(0.85, 0, 0.15, 1)`;
+        timelineBg.style.transform = 'translate3d(101%, 0, 0)';
+      }
+
+      // 6. When wipe covers screen, hide old slide and advance to next slide
+      wipeTimeout = setTimeout(() => {
+        if (!isRunning) return;
+
+        currentImg.style.display = 'none';
+        currentImg.style.opacity = '0';
+
+        currentIndex = (currentIndex + 1) % images.length;
+        playSlide(currentIndex);
+      }, DURATION_WIPE);
+
+    }, DURATION_ZOOM);
+  }
+
+  // Handle visibility change (pause when tab hidden to prevent drift)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isRunning = false;
+      clearTimeout(zoomTimeout);
+      clearTimeout(wipeTimeout);
+    } else {
+      if (!isRunning) {
+        isRunning = true;
+        playSlide(currentIndex);
+      }
+    }
+  });
+
+  // Start slider at slide 0
+  playSlide(0);
 }
 
 // -------------------------------------------------------------
-// 9. INITIALIZE ON DOM READY
+// 10. INITIALIZE ON DOM READY
 // -------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   window.cartManager = new CartManager();
@@ -1018,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupForms();
   setupBeautyRoutineScroll();
   setupCursorAnimations();
-  setupListingCardsHoverPhysics();
+  setupHeroImageSlider();
 });
 
 
