@@ -520,4 +520,29 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
   transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
+/* =============================================================
+   VARIABLE FONT CURSOR STRETCH EFFECT - NO UNWANTED LINE BREAKS
+   Keep lines stretching in and out without breaking onto new lines
+   ============================================================= */
+.heading.is-header-video-1-title-1,
+.heading.is-header-video-1-title-1.is-2nd {
+  white-space: nowrap !important;
+  font-synthesis: none;
+}
+
+.header-1-block-with-image {
+  flex-wrap: wrap !important;
+  align-items: center;
+  max-width: 100%;
+}
+
+.header-video-1-title {
+  max-width: 72em !important;
+}
+
+.listing-heading-uni-1 {
+  white-space: nowrap !important;
+}
+
+
 
