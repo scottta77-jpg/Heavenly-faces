@@ -291,7 +291,7 @@ class CartManager {
     }
 
     if (totalCount === 0) {
-      if (emptyState) emptyState.style.display = 'block';
+      if (emptyState) emptyState.style.display = 'flex';
       if (form) form.style.display = 'none';
       return;
     }

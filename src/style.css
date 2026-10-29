@@ -17,6 +17,52 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
 
 .cart-wrapper.w--open {
   display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.w-commerce-commercecartcontainerwrapper--cartType-modal {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.w-commerce-commercecartcontainer,
+.cart-container {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  min-width: 320px !important;
+  max-width: 480px !important;
+  max-height: 85vh !important;
+  margin: auto !important;
+  background-color: var(--main-background, #f8ecf3) !important;
+  box-shadow: 0 5px 25px 0 var(--purple-black, #15112a) !important;
+  overflow: auto !important;
+}
+
+.w-commerce-commercecartemptystate {
+  display: flex !important;
+  flex: 1 !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 90px 24px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.w-commerce-commercecartemptystate > div {
+  text-align: center !important;
+  width: 100% !important;
+  color: var(--midnight-purple, #332864) !important;
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  margin: 0 auto !important;
 }
 
 .cart-submit-button {
