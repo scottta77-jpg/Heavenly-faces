@@ -670,6 +670,52 @@ function setupForms() {
 }
 
 // -------------------------------------------------------------
+// 7. BEAUTY ROUTINE PINNED HORIZONTAL SCROLL STOP ANIMATION
+// -------------------------------------------------------------
+function setupBeautyRoutineScroll() {
+  const section = document.querySelector('.routine-pinned-section');
+  const track = document.getElementById('routine-carousel-track');
+  const wrapper = document.querySelector('.routine-carousel-wrapper');
+  if (!section || !track || !wrapper) return;
+
+  let ticking = false;
+
+  function update() {
+    const rect = section.getBoundingClientRect();
+    const sectionHeight = section.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollDistance = sectionHeight - windowHeight;
+
+    if (scrollDistance <= 0) {
+      ticking = false;
+      return;
+    }
+
+    // progress goes from 0 (top of section touches top of viewport)
+    // to 1 (scrolled through the full vertical distance of the section)
+    const progress = Math.min(Math.max(-rect.top / scrollDistance, 0), 1);
+    const maxTranslate = Math.max(0, track.scrollWidth - wrapper.clientWidth);
+    const currentX = -(progress * maxTranslate);
+
+    track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  // Initial position check
+  update();
+}
+
+// -------------------------------------------------------------
 // 8. INITIALIZE ON DOM READY
 // -------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -679,4 +725,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSmoothScroll();
   setupScrollAnimations();
   setupForms();
+  setupBeautyRoutineScroll();
 });
