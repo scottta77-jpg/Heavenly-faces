@@ -965,7 +965,7 @@ function setup3DTiltCursorEffects() {
  */
 function setupVariableFontCursorEffect() {
   const headings = document.querySelectorAll(
-    '.heading.is-header-video-1-title-1, .heading.is-content-grid-1-title, .heading.is-header-4-title-1, .heading.is-header-slider-2-title-2, .listing-heading-uni-1'
+    '.heading.is-header-video-1-title-1, .heading.is-content-grid-1-title, .heading.is-header-slider-2-title-2, .listing-heading-uni-1'
   );
   if (headings.length === 0) return;
 
