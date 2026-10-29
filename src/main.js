@@ -718,7 +718,245 @@ function setupBeautyRoutineScroll() {
 }
 
 // -------------------------------------------------------------
-// 8. INITIALIZE ON DOM READY
+// 8. CURSOR ANIMATIONS & 3D TILT PHYSICS ENGINE
+// -------------------------------------------------------------
+function setupCursorAnimations() {
+  // A. Magnetic Circle Buttons (Discover button, hero circle buttons)
+  setupMagneticCircleButtons();
+
+  // B. Magnetic Social Buttons
+  setupMagneticSocialButtons();
+
+  // C. 3D Tilt Cursor Physics on Images & Text
+  setup3DTiltCursorEffects();
+
+  // D. Variable Font Weight on Cursor X Movement
+  setupVariableFontCursorEffect();
+}
+
+/**
+ * Magnetic button pull tracking cursor coordinates relative to center
+ */
+function setupMagneticCircleButtons() {
+  const circleButtons = document.querySelectorAll('.main-circle-button, .hero-down-button');
+  
+  circleButtons.forEach(btn => {
+    const content = btn.querySelector('.circle-button-content');
+    const border = btn.querySelector('.circle-button-border-1');
+    const icon = btn.querySelector('.circle-button-icon-1');
+    const text = btn.querySelector('.circle-button-text-1');
+
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Normalized offset (-1 to 1)
+      const normX = Math.max(-1, Math.min(1, (e.clientX - centerX) / (rect.width / 2)));
+      const normY = Math.max(-1, Math.min(1, (e.clientY - centerY) / (rect.height / 2)));
+
+      // Magnetic pull: border stretches further than content for organic elastic feel
+      if (content) {
+        content.style.transform = `translate3d(${normX * 16}px, ${normY * 16}px, 0)`;
+      }
+      if (border) {
+        border.style.transform = `translate3d(${normX * 24}px, ${normY * 24}px, 0) scale(1.18)`;
+      }
+      if (icon) {
+        icon.style.transform = `translate3d(${normX * 12}px, ${normY * 12}px, 0)`;
+      }
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      if (content) {
+        content.style.transform = 'translate3d(0, 0, 0)';
+      }
+      if (border) {
+        border.style.transform = 'translate3d(0, 0, 0) scale(1)';
+      }
+      if (icon) {
+        icon.style.transform = 'translate3d(0, 0, 0)';
+      }
+    });
+  });
+}
+
+/**
+ * Magnetic Social Buttons
+ */
+function setupMagneticSocialButtons() {
+  const socialButtons = document.querySelectorAll('.social-1-link-block');
+
+  socialButtons.forEach(btn => {
+    const icon = btn.querySelector('.social-icon');
+    const circle = btn.querySelector('.social-link-circle');
+
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const normX = Math.max(-1, Math.min(1, (e.clientX - centerX) / (rect.width / 2)));
+      const normY = Math.max(-1, Math.min(1, (e.clientY - centerY) / (rect.height / 2)));
+
+      if (icon) {
+        icon.style.transform = `translate3d(${normX * 8}px, ${normY * 8}px, 0)`;
+      }
+      if (circle) {
+        circle.style.transform = `translate3d(${normX * 4}px, ${normY * 4}px, 0) scale(1)`;
+      }
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      if (icon) {
+        icon.style.transform = 'translate3d(0, 0, 0)';
+      }
+      if (circle) {
+        circle.style.transform = 'translate3d(0, 0, 0) scale(0.6)';
+      }
+    });
+  });
+}
+
+/**
+ * 3D Tilt Cursor Physics on Images (_3d-block > _3d-trigger) and Text (_3d-block-for-text)
+ * Using smooth requestAnimationFrame linear interpolation (lerp)
+ */
+function setup3DTiltCursorEffects() {
+  const imageBlocks = Array.from(document.querySelectorAll('._3d-block'));
+  const textBlocks = Array.from(document.querySelectorAll('._3d-block-for-text'));
+
+  if (imageBlocks.length === 0 && textBlocks.length === 0) return;
+
+  // Track target mouse position
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let hasMoved = false;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    hasMoved = true;
+  }, { passive: true });
+
+  // Store current animated values for each block
+  const imageStates = imageBlocks.map(block => ({
+    block,
+    trigger: block.querySelector('._3d-trigger') || block,
+    currentRotX: 0,
+    currentRotY: 0,
+    currentTransX: 0,
+    currentTransY: 0
+  }));
+
+  const textStates = textBlocks.map(block => ({
+    block,
+    currentRotX: 0,
+    currentRotY: 0,
+    currentTransX: 0,
+    currentTransY: 0
+  }));
+
+  const windowW = window.innerWidth;
+  const windowH = window.innerHeight;
+
+  function render3D() {
+    if (hasMoved) {
+      const halfW = window.innerWidth / 2;
+      const halfH = window.innerHeight / 2;
+
+      // 1. Image 3D tilt
+      imageStates.forEach(item => {
+        const rect = item.block.getBoundingClientRect();
+        // Check if visible in viewport
+        if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const normX = Math.max(-1.2, Math.min(1.2, (mouseX - centerX) / halfW));
+          const normY = Math.max(-1.2, Math.min(1.2, (mouseY - centerY) / halfH));
+
+          // Webflow a-137 configuration:
+          // X: -2% to 2% translate, -4deg to 4deg rotateY
+          // Y: -2% to 2% translate, 3deg to -3deg rotateX
+          const targetRotY = normX * 4;
+          const targetRotX = -normY * 3;
+          const targetTransX = normX * 2;
+          const targetTransY = normY * 2;
+
+          // Smooth damping lerp (0.08)
+          item.currentRotX += (targetRotX - item.currentRotX) * 0.08;
+          item.currentRotY += (targetRotY - item.currentRotY) * 0.08;
+          item.currentTransX += (targetTransX - item.currentTransX) * 0.08;
+          item.currentTransY += (targetTransY - item.currentTransY) * 0.08;
+
+          item.trigger.style.transform = `translate3d(${item.currentTransX.toFixed(2)}%, ${item.currentTransY.toFixed(2)}%, 0) rotateX(${item.currentRotX.toFixed(2)}deg) rotateY(${item.currentRotY.toFixed(2)}deg)`;
+        }
+      });
+
+      // 2. Text 3D floating parallax
+      textStates.forEach(item => {
+        const rect = item.block.getBoundingClientRect();
+        if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const normX = Math.max(-1.2, Math.min(1.2, (mouseX - centerX) / halfW));
+          const normY = Math.max(-1.2, Math.min(1.2, (mouseY - centerY) / halfH));
+
+          // Webflow a-69 configuration:
+          // X: -3rem to 3rem translate, -8deg to 8deg rotateY
+          // Y: -3rem to 3rem translate, 8deg to -8deg rotateX
+          const targetRotY = normX * 8;
+          const targetRotX = -normY * 8;
+          const targetTransX = normX * 24;
+          const targetTransY = normY * 24;
+
+          item.currentRotX += (targetRotX - item.currentRotX) * 0.08;
+          item.currentRotY += (targetRotY - item.currentRotY) * 0.08;
+          item.currentTransX += (targetTransX - item.currentTransX) * 0.08;
+          item.currentTransY += (targetTransY - item.currentTransY) * 0.08;
+
+          item.block.style.transform = `translate3d(${item.currentTransX.toFixed(1)}px, ${item.currentTransY.toFixed(1)}px, 0) rotateX(${item.currentRotX.toFixed(2)}deg) rotateY(${item.currentRotY.toFixed(2)}deg)`;
+        }
+      });
+    }
+
+    requestAnimationFrame(render3D);
+  }
+
+  requestAnimationFrame(render3D);
+}
+
+/**
+ * Variable Font Weight Shift on Horizontal Cursor Movement (Webflow a-163)
+ */
+function setupVariableFontCursorEffect() {
+  const headings = document.querySelectorAll('.heading.is-header-video-1-title-1, .heading.is-content-grid-1-title, .heading.is-header-4-title-1');
+  if (headings.length === 0) return;
+
+  let ticking = false;
+
+  window.addEventListener('mousemove', (e) => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const normX = Math.max(0, Math.min(1, e.clientX / window.innerWidth));
+        // Interpolate weight from 200 (light) to 600 (bold)
+        const weight = Math.round(200 + normX * (600 - 200));
+
+        headings.forEach(h => {
+          h.style.fontVariationSettings = `'wght' ${weight}`;
+          h.style.fontWeight = weight;
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// -------------------------------------------------------------
+// 9. INITIALIZE ON DOM READY
 // -------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   window.cartManager = new CartManager();
@@ -728,4 +966,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupScrollAnimations();
   setupForms();
   setupBeautyRoutineScroll();
+  setupCursorAnimations();
 });
+
