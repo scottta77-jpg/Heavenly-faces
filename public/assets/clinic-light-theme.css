@@ -1,91 +1,9 @@
 /* ==========================================================================
-   HEAVENLY FACES - CLINIC LIGHT THEME
-   Palette:
-     Main background:     White #FFFFFF
-     Section background:  Pale aqua #F0FAFA
-     Headings:            Deep blue #344775
-     Booking buttons:     Deep teal #087F8C
-     Small accents:       Purple #50366E
+   HEAVENLY FACES - PROMO BAR & WELCOME OFFER MODAL
+   Preserves original Webflow theme, typography, hero, and navigation.
    ========================================================================== */
 
-:root {
-  --hf-bg-main: #FFFFFF;
-  --hf-bg-section: #F0FAFA;
-  --hf-bg-pale-aqua: #F0FAFA;
-  --hf-aqua-tint: #E2F3F3;
-  --hf-heading-blue: #344775;
-  --hf-text-dark: #344775;
-  --hf-text-muted: #4e6284;
-  --hf-btn-teal: #087F8C;
-  --hf-btn-teal-hover: #066772;
-  --hf-accent-purple: #50366E;
-  --hf-accent-purple-light: #7c5a9e;
-  --hf-border-light: rgba(8, 127, 140, 0.14);
-
-  /* Webflow root token overrides */
-  --main-background: #FFFFFF;
-  --midnight-purple: #344775;
-  --purple-black: #F0FAFA;
-  --thistle: #F0FAFA;
-  --dark-slate-blue: #344775;
-  --light-blue: #F0FAFA;
-  --midnight-blue: #344775;
-  --pale-violet-red: #50366E;
-  --medium-violet-red: #087F8C;
-  --black: #344775;
-  --dark-slate-grey: #344775;
-}
-
-/* ==========================================================================
-   GLOBAL BASE
-   ========================================================================== */
-html, body {
-  background-color: #FFFFFF !important;
-  color: #344775 !important;
-  font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  margin: 0;
-  padding: 0;
-}
-
-.page-wrapper,
-.page-wrapper.is-dark {
-  background-color: #FFFFFF !important;
-  color: #344775 !important;
-  position: relative !important;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6,
-.heading,
-.heading.is-header-4-title-1,
-.heading.is-header-image-1-title-1,
-.heading.is-content-grid-1-title,
-.heading.is-small-title,
-.heading.is-medium-title,
-.heading.is-large-title,
-.heading.is-regular-title,
-.heading.is-extra-small-title,
-.listing-heading-uni-1,
-.listing-heading-uni-2,
-.list-title {
-  color: #344775 !important;
-}
-
-/* Body & paragraph text */
-p,
-.content-grid-9-text-1,
-.content-grid-3-text-1,
-.listing-text,
-.grid-6-text-2,
-.header-5-text,
-.listing-7-link-content,
-.content-text-1 {
-  color: #4e6284 !important;
-}
-
-/* ==========================================================================
-   TOP PROMO BAR (TEAL #087F8C)
-   ========================================================================== */
+/* Top Promo Bar (Teal #087F8C) */
 .promo-bar {
   background-color: #087F8C !important;
   color: #FFFFFF !important;
@@ -96,10 +14,10 @@ p,
   left: 0;
   right: 0;
   z-index: 1002;
-  font-family: Poppins, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0 48px 0 24px;
   display: flex;
@@ -128,7 +46,7 @@ p,
   text-decoration: underline !important;
   text-underline-offset: 3px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   transition: opacity 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -161,405 +79,20 @@ p,
   transform: translateY(-50%) scale(1.1);
 }
 
-/* ==========================================================================
-   NAVBAR POSITIONING WITH PROMO BAR
-   (Preserves original Webflow navbar styling, buttons, fonts, and colors)
-   ========================================================================== */
-body:has(.promo-bar:not(.is-hidden)) .navbar,
-body:has(.promo-bar:not(.is-hidden)) .menu-button,
-body:has(.promo-bar:not(.is-hidden)) .nav-cta-button,
+/* Offset navbar and corner buttons cleanly when promo bar is active */
 body.has-promo .navbar,
 body.has-promo .menu-button,
 body.has-promo .nav-cta-button {
   top: 38px !important;
 }
 
-body:has(.promo-bar:not(.is-hidden)),
-body.has-promo {
-  padding-top: 38px;
-}
-
 /* ==========================================================================
-   HERO SECTION (BRIGHT, AIRY CLINIC FEEL - PALE AQUA WASH)
-   ========================================================================== */
-.main-hero {
-  position: relative;
-  background-color: #F0FAFA !important;
-  overflow: hidden;
-  min-height: 86vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-absolute-image {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-color: #EBF7F7 !important;
-}
-
-/* Airy clinic wash with natural skin tones and pale aqua tone */
-.hero-absolute-image .cover-image {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  opacity: 0.32 !important;
-  filter: brightness(1.08) contrast(0.94) saturate(0.82) !important;
-}
-
-/* Airy high-key clinic wash gradient matching pale aqua #F0FAFA */
-.hero-absolute-image .main-hero-overlay,
-.main-hero-overlay {
-  background: linear-gradient(180deg, rgba(235, 248, 248, 0.82) 0%, rgba(240, 250, 250, 0.90) 100%) !important;
-  opacity: 1 !important;
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.hero-absolute-image .animation-color-bg,
-.hero-absolute-image .animation-color-bg.is-purple-dark {
-  background-color: #F0FAFA !important;
-  opacity: 0.2 !important;
-}
-
-.main-hero-layout {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 5em 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.main-hero-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.main-hero-image {
-  display: none !important;
-}
-
-.uppercase-title-dark {
-  color: #344775 !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.35em !important;
-  text-transform: uppercase !important;
-  margin-bottom: 1.2em !important;
-  opacity: 1 !important;
-  text-align: center !important;
-}
-
-.heading.is-header-4-title-1 {
-  color: #344775 !important;
-  font-family: Clash Display Variable, Poppins, sans-serif !important;
-  font-size: 5.6em !important;
-  font-weight: 200 !important;
-  line-height: 1.06em !important;
-  letter-spacing: 0.02em !important;
-  text-transform: uppercase !important;
-  text-align: center !important;
-  max-width: 12em !important;
-  margin: 0 auto 0.6em auto !important;
-  opacity: 1 !important;
-}
-
-@media screen and (max-width: 991px) {
-  .heading.is-header-4-title-1 {
-    font-size: 3.8em !important;
-  }
-}
-@media screen and (max-width: 479px) {
-  .heading.is-header-4-title-1 {
-    font-size: 2.6em !important;
-  }
-}
-
-/* Hero CTA Button Group (matching Reference Images 2 & 3) */
-.hero-cta-group {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 16px !important;
-  margin-top: 1.8em !important;
-  flex-wrap: wrap !important;
-  z-index: 20 !important;
-  position: relative !important;
-}
-
-.hero-btn-teal {
-  background-color: #087F8C !important;
-  color: #FFFFFF !important;
-  font-family: inherit !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.04em !important;
-  padding: 13px 28px !important;
-  border-radius: 6px !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 4px 14px rgba(8, 127, 140, 0.25) !important;
-  border: 1px solid #087F8C !important;
-  cursor: pointer;
-}
-
-.hero-btn-teal:hover {
-  background-color: #066772 !important;
-  border-color: #066772 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(8, 127, 140, 0.35) !important;
-}
-
-.hero-btn-outline {
-  background-color: #FFFFFF !important;
-  color: #344775 !important;
-  font-family: inherit !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.04em !important;
-  padding: 13px 28px !important;
-  border-radius: 6px !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  border: 2px solid #344775 !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 2px 8px rgba(52, 71, 117, 0.06) !important;
-  cursor: pointer;
-}
-
-.hero-btn-outline:hover {
-  background-color: #F0FAFA !important;
-  border-color: #50366E !important;
-  color: #50366E !important;
-  transform: translateY(-2px) !important;
-}
-
-/* ==========================================================================
-   SECTIONS & ALTERNATING BACKGROUNDS
-   ========================================================================== */
-.section {
-  background-color: #FFFFFF !important;
-  color: #344775 !important;
-}
-
-.section.with-purple-black-bg {
-  background-color: #F0FAFA !important;
-  color: #344775 !important;
-}
-
-.section-listing-7 {
-  background-color: #FFFFFF !important;
-}
-
-.listing-7-overlay-color {
-  background-color: rgba(240, 250, 250, 0.8) !important;
-}
-
-.listing-7-block {
-  background-color: #FFFFFF !important;
-  border: 1px solid rgba(8, 127, 140, 0.12) !important;
-  border-radius: 6px !important;
-}
-
-.listing-7-name {
-  color: #344775 !important;
-}
-
-/* Number badges and icons */
-.elipse.with-animation .elipse-trigger {
-  background-color: #50366E !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 2px 10px rgba(80, 54, 110, 0.25) !important;
-}
-
-.elipse-number {
-  color: #FFFFFF !important;
-}
-
-.elipse.is-2nd {
-  border-color: #087F8C !important;
-}
-
-.elipse.is-3rd {
-  border-color: #C8E8E8 !important;
-}
-
-.elipse-bg {
-  border-color: rgba(8, 127, 140, 0.15) !important;
-}
-
-/* Image overlays: lighten dark overlays */
-.animation-color-bg.is-purple-dark,
-.animation-color-bg {
-  background-color: #F0FAFA !important;
-  opacity: 0.1 !important;
-}
-
-.listing-gradient-color {
-  background: linear-gradient(180deg, rgba(240, 250, 250, 0) 0%, rgba(240, 250, 250, 0.95) 100%) !important;
-}
-
-/* Listing 2 cards (Explore services) */
-.listing-2-item {
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 20px rgba(8, 127, 140, 0.08) !important;
-}
-
-.listing-2-content-2 {
-  background-color: #FFFFFF !important;
-  padding: 1.5em !important;
-  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
-}
-
-.listing-2-content-2 h3,
-.listing-2-content-2 .listing-heading-uni-1 {
-  color: #344775 !important;
-}
-
-/* Circle Discover button */
-.main-circle-button {
-  background-color: #087F8C !important;
-  border: 1px solid #087F8C !important;
-  color: #FFFFFF !important;
-}
-
-.main-circle-button .circle-button-text-1 {
-  color: #FFFFFF !important;
-}
-
-.main-circle-button .circle-button-border-1 {
-  border-color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.circle-button-icon-1 {
-  filter: brightness(0) invert(1) !important;
-}
-
-/* Discover buttons in listings */
-.listing-2-item .main-circle-button {
-  background-color: #087F8C !important;
-}
-
-/* Content grid blocks */
-.content-grid-3-block-1,
-.grid-6-content,
-.header-5-box {
-  color: #344775 !important;
-}
-
-/* Discover buttons */
-.main-button.is-light,
-.main-button.is-transparent,
-.main-button {
-  background-color: #087F8C !important;
-  color: #FFFFFF !important;
-  border: 1px solid #087F8C !important;
-  border-radius: 4px !important;
-  padding: 10px 22px !important;
-  transition: all 0.2s ease !important;
-}
-
-.main-button.is-light:hover,
-.main-button.is-transparent:hover,
-.main-button:hover {
-  background-color: #066772 !important;
-  border-color: #066772 !important;
-}
-
-.main-button .button-text {
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
-  font-size: 12px !important;
-  letter-spacing: 0.08em !important;
-}
-
-/* Products listing (listing-3) */
-.listing-3.with-dark-bg {
-  background-color: #F0FAFA !important;
-}
-
-.services-3-item .listing-3-link {
-  background-color: #FFFFFF !important;
-  border: 1px solid rgba(8, 127, 140, 0.12) !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 16px rgba(8, 127, 140, 0.06) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-}
-
-.services-3-item .listing-3-link:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 24px rgba(8, 127, 140, 0.12) !important;
-}
-
-.listing-3-content {
-  background-color: #FFFFFF !important;
-}
-
-.listing-3-content h5 {
-  color: #344775 !important;
-}
-
-.listing-text.in-listing-3 {
-  color: #4e6284 !important;
-}
-
-/* Footer / Subfooter */
-.footer-open-menu-link {
-  background-color: #087F8C !important;
-  color: #FFFFFF !important;
-}
-
-.footer-open-menu-link-text {
-  color: #FFFFFF !important;
-}
-
-.footer-link-large {
-  color: #344775 !important;
-}
-
-.footer-link-large:hover {
-  color: #50366E !important;
-}
-
-.subfooter-1-black {
-  background-color: #344775 !important;
-  color: #FFFFFF !important;
-}
-
-.subfooter-links .footer-link.is-2nd,
-.subfooter-links .footer-link.is-2nd a {
-  color: #D9F0F0 !important;
-}
-
-.subfooter-links .footer-link.is-2nd a:hover {
-  color: #FFFFFF !important;
-}
-
-/* ==========================================================================
-   POPUP MODAL (£50 OFF FIRST TREATMENT - REFERENCE IMAGE 1)
+   POPUP MODAL (£50 OFF WELCOME OFFER)
    ========================================================================== */
 .hf-popup-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(20, 35, 55, 0.55);
+  background-color: rgba(15, 10, 24, 0.65);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 99999;
@@ -626,7 +159,7 @@ body.has-promo {
 }
 
 .hf-popup-badge {
-  font-family: Poppins, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -637,7 +170,7 @@ body.has-promo {
 }
 
 .hf-popup-amount {
-  font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 400;
@@ -647,7 +180,7 @@ body.has-promo {
 }
 
 .hf-popup-subtitle {
-  font-family: Poppins, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -684,7 +217,7 @@ body.has-promo {
 }
 
 .hf-field-label {
-  font-family: Poppins, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -817,116 +350,3 @@ body.has-promo {
   font-size: 13.5px;
   line-height: 1.5;
 }
-
-/* ==========================================================================
-   SUBPAGE SECTIONS & GLOBAL COMPONENTS (CLINIC LIGHT THEME)
-   ========================================================================== */
-.section.with-green-bg,
-.section.with-midnight-purple-blue-bg,
-.section.with-gradient-pink-bg,
-.section.visible-overflow-dark-bg,
-.section-listing-7,
-.listing-3.with-dark-bg,
-.header-5 {
-  background-color: #F0FAFA !important;
-  color: #344775 !important;
-}
-
-.last-section-dark-color,
-.last-section-purple-color,
-.first-section-dark-color {
-  background-color: #F0FAFA !important;
-}
-
-/* Subpage header blocks */
-.header-image-1,
-.header-wrap {
-  background-color: #FFFFFF !important;
-  color: #344775 !important;
-}
-
-.header-image-1-title,
-.header-image-1-title-1,
-.header-5-box h3,
-.heading.is-sticky-title,
-.content-section-1-title {
-  color: #344775 !important;
-}
-
-.header-image-1-gradient-color,
-.bg-overlay-color {
-  background: linear-gradient(180deg, rgba(240, 250, 250, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%) !important;
-}
-
-/* Forms across site */
-.w-input,
-.newsletter-field,
-.form-input,
-.text-field {
-  background-color: #FFFFFF !important;
-  color: #344775 !important;
-  border: 1px solid #C8DCDC !important;
-  border-radius: 4px !important;
-}
-
-.w-input:focus,
-.newsletter-field:focus {
-  border-color: #087F8C !important;
-  box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.15) !important;
-}
-
-.newsletter-submit-button,
-.submit-button,
-.form-button {
-  background-color: #087F8C !important;
-  color: #FFFFFF !important;
-  border: none !important;
-  border-radius: 4px !important;
-  transition: background-color 0.2s ease !important;
-  cursor: pointer !important;
-}
-
-.newsletter-submit-button:hover,
-.submit-button:hover,
-.form-button:hover {
-  background-color: #066772 !important;
-}
-
-/* Newsletter & Accordion blocks */
-.newsletter {
-  background-color: #F0FAFA !important;
-  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
-}
-
-.newsletter-text,
-.newsletter-text-2,
-.newsletter-text-1 {
-  color: #344775 !important;
-}
-
-.accordion-toggle {
-  background-color: #FFFFFF !important;
-  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
-  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
-}
-
-.accordion-title {
-  color: #344775 !important;
-}
-
-.accordion-content {
-  background-color: #F0FAFA !important;
-}
-
-.list-block {
-  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
-}
-
-.list-title {
-  color: #344775 !important;
-}
-
-.list-text {
-  color: #4e6284 !important;
-}
-
