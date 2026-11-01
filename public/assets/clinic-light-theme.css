@@ -91,7 +91,10 @@ p,
   color: #FFFFFF !important;
   width: 100%;
   height: 38px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1002;
   font-family: Poppins, sans-serif;
   font-size: 11px;
@@ -159,182 +162,21 @@ p,
 }
 
 /* ==========================================================================
-   NAVBAR (WHITE & AQUA CLINIC BRANDING - MATCHING REFERENCES 2 & 3)
+   NAVBAR POSITIONING WITH PROMO BAR
+   (Preserves original Webflow navbar styling, buttons, fonts, and colors)
    ========================================================================== */
-.navbar {
-  background-color: #FFFFFF !important;
-  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
-  position: relative !important;
-  top: auto !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 60px !important;
-  min-height: 60px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  box-shadow: 0 1px 3px rgba(8, 127, 140, 0.05) !important;
-  z-index: 998 !important;
+body:has(.promo-bar:not(.is-hidden)) .navbar,
+body:has(.promo-bar:not(.is-hidden)) .menu-button,
+body:has(.promo-bar:not(.is-hidden)) .nav-cta-button,
+body.has-promo .navbar,
+body.has-promo .menu-button,
+body.has-promo .nav-cta-button {
+  top: 38px !important;
 }
 
-/* Menu button on the left */
-.navbar .menu-button {
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  height: 100% !important;
-  width: auto !important;
-  background-color: #E2F3F3 !important;
-  color: #344775 !important;
-  padding: 0 24px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  border-right: 1px solid rgba(8, 127, 140, 0.12) !important;
-  border-radius: 0 !important;
-  transition: background-color 0.2s ease !important;
-  cursor: pointer !important;
-  z-index: 10 !important;
-}
-
-.navbar .menu-button:hover {
-  background-color: #D2EDED !important;
-}
-
-.navbar .menu-button .nav-button-icon {
-  width: 15px !important;
-  height: 15px !important;
-  filter: brightness(0) saturate(100%) invert(26%) sepia(21%) saturate(1637%) hue-rotate(185deg) brightness(92%) contrast(89%) !important;
-}
-
-.navbar .menu-button .menu-link-title {
-  color: #344775 !important;
-  font-weight: 600 !important;
-  font-size: 11px !important;
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-}
-
-/* Main Navigation center */
-.navbar .main-nav {
-  height: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 2.2em !important;
-}
-
-.navbar .nav-block-1,
-.navbar .nav-block-2,
-.navbar .nav-block-3 {
-  display: flex !important;
-  align-items: center !important;
-}
-
-.navbar .nav-block-1 {
-  gap: 2em !important;
-}
-
-.navbar .nav-block-3 {
-  gap: 2em !important;
-}
-
-/* Nav links & dropdowns */
-.navbar .dropdown-toggle,
-.navbar .nav-link {
-  color: #344775 !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-  height: auto !important;
-}
-
-.navbar .dropdown-toggle .menu-link-title,
-.navbar .nav-link .menu-link-title,
-.navbar .dropdown-icon {
-  color: #344775 !important;
-  font-weight: 500 !important;
-  font-size: 11px !important;
-  letter-spacing: 0.14em !important;
-  transition: color 0.2s ease !important;
-}
-
-.navbar .dropdown-toggle:hover .menu-link-title,
-.navbar .nav-link:hover .menu-link-title {
-  color: #50366E !important;
-}
-
-/* Brand logo center */
-.navbar .brand-name {
-  color: #344775 !important;
-  font-size: 17px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.26em !important;
-  text-transform: uppercase !important;
-  margin: 0 !important;
-}
-
-.navbar .brand-link-block {
-  padding: 0 1.5em !important;
-}
-
-/* Far-right CTA button: BOOK NOW -> */
-.navbar .nav-cta-button {
-  position: absolute !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  height: 100% !important;
-  width: auto !important;
-  background-color: #087F8C !important;
-  color: #FFFFFF !important;
-  padding: 0 28px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 0 !important;
-  transition: background-color 0.2s ease !important;
-  cursor: pointer !important;
-  z-index: 10 !important;
-}
-
-.navbar .nav-cta-button:hover {
-  background-color: #066772 !important;
-}
-
-.navbar .nav-cta-button .menu-link-title {
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
-  font-size: 11px !important;
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-}
-
-.navbar .nav-cta-button .nav-button-icon {
-  width: 14px !important;
-  height: 14px !important;
-  filter: brightness(0) invert(1) !important;
-}
-
-/* Dropdown menus */
-.dropdown-list.w--open {
-  background-color: #FFFFFF !important;
-  border-radius: 6px !important;
-  box-shadow: 0 20px 40px rgba(52, 71, 117, 0.12) !important;
-  border: 1px solid rgba(8, 127, 140, 0.1) !important;
-  top: 60px !important;
-}
-
-.dropdown-list .menu-link-name {
-  color: #344775 !important;
-}
-
-.dropdown-list .menu-link:hover .menu-link-name {
-  color: #50366E !important;
+body:has(.promo-bar:not(.is-hidden)),
+body.has-promo {
+  padding-top: 38px;
 }
 
 /* ==========================================================================
