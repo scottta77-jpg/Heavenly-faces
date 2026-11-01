@@ -1032,6 +1032,12 @@ body.has-promo .main-hero {
 
 /* ==========================================================================
    SUBPAGE SECTIONS & GLOBAL COMPONENTS (CLINIC LIGHT THEME)
+   Palette:
+     Main background:    White #FFFFFF
+     Section background: Pale aqua #F0FAFA
+     Headings:           Deep blue #344775
+     Booking/CTA buttons:Deep teal #087F8C (hover: #066772)
+     Small accents:      Purple #50366E
    ========================================================================== */
 .section.with-green-bg,
 .section.with-midnight-purple-blue-bg,
@@ -1040,7 +1046,10 @@ body.has-promo .main-hero {
 .section.with-purple-black-bg,
 .section-listing-7,
 .listing-3.with-dark-bg,
-.header-5 {
+.header-5,
+.header-3,
+.header-4.is-dark,
+.header-slider-2 {
   background-color: #F0FAFA !important;
   color: #344775 !important;
 }
@@ -1051,9 +1060,27 @@ body.has-promo .main-hero {
   background-color: #F0FAFA !important;
 }
 
+/* Remove dark curtain covers over photography across all sections */
+.animation-color-bg:not(.main-hero .animation-color-bg),
+.animation-color-bg.is-purple-dark:not(.main-hero .animation-color-bg),
+.animation-color-bg.is-midnight-purple,
+.animation-color-bg.is-green-light {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Ensure all photography cover images are visible (overriding Webflow canvas inline display: none) */
+.cover-image:not(.main-hero-image .cover-image) {
+  display: block !important;
+  opacity: 0.95 !important;
+  object-fit: cover !important;
+}
+
 /* Subpage header blocks */
 .header-image-1,
-.header-wrap {
+.header-wrap,
+.header-4,
+.header-6 {
   background-color: #FFFFFF !important;
   color: #344775 !important;
 }
@@ -1067,86 +1094,626 @@ body.has-promo .main-hero {
 }
 
 .header-image-1-gradient-color,
+.header-6-gradient-bottom,
 .bg-overlay-color {
-  background: linear-gradient(180deg, rgba(240, 250, 250, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%) !important;
+  background: linear-gradient(180deg, rgba(240, 250, 250, 0.4) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
 }
 
-/* Buttons across site */
+/* ==========================================================================
+   CALL-TO-ACTION (CTA) BUTTONS - CLINIC HIGH-CONTRAST OVERHAUL
+   ========================================================================== */
+
+/* 1. Primary Action & Booking Buttons */
 .main-button,
-.main-button-2 {
+.main-button.is-light,
+.main-button-2,
+.main-button.is-product-detail,
+.cta-1-button .main-button,
+.grid-6-button .main-button {
   background-color: #087F8C !important;
   color: #FFFFFF !important;
-  border: 1px solid #087F8C !important;
-  border-radius: 4px !important;
-  transition: all 0.2s ease !important;
+  border: 1.5px solid #087F8C !important;
+  border-radius: 6px !important;
+  padding: 13px 28px !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 14px rgba(8, 127, 140, 0.22) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  position: relative !important;
 }
 
 .main-button:hover,
-.main-button-2:hover {
+.main-button.is-light:hover,
+.main-button-2:hover,
+.main-button.is-product-detail:hover,
+.cta-1-button .main-button:hover,
+.grid-6-button .main-button:hover {
   background-color: #066772 !important;
   border-color: #066772 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.35) !important;
+}
+
+.main-button:active,
+.main-button.is-light:active,
+.main-button-2:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(8, 127, 140, 0.25) !important;
 }
 
 .main-button .button-text,
-.main-button-2 .button-text {
+.main-button.is-light .button-text,
+.main-button-2 .button-text,
+.main-button.is-product-detail .button-text,
+.cta-1-button .main-button .button-text,
+.grid-6-button .main-button .button-text {
   color: #FFFFFF !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
 }
 
-/* Outlined buttons */
+/* Ensure Webflow initial opacity animation on button wrappers doesn't hide them */
+.grid-6-button,
+.cta-1-button,
+.listing-button,
+.listing-button-2,
+.product-buttons,
+[data-w-id="9f3dad82-02c6-257a-6899-4e281458ec63"] {
+  opacity: 1 !important;
+  transform: none !important;
+  display: inline-flex !important;
+}
+
+.listing-button {
+  margin-top: 12px !important;
+}
+
+.listing-text.in-listing-3 {
+  opacity: 1 !important;
+  transform: none !important;
+  display: block !important;
+  color: #4e6284 !important;
+  margin-bottom: 12px !important;
+}
+
+/* 2. Secondary & Outlined Buttons ("Product", "Read", Transparent CTAs) */
 .main-button.is-transparent {
   background-color: #FFFFFF !important;
   color: #344775 !important;
-  border: 1px solid #344775 !important;
+  border: 1.5px solid #344775 !important;
+  border-radius: 6px !important;
+  padding: 11px 24px !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 8px rgba(52, 71, 117, 0.08) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
 }
 
 .main-button.is-transparent .button-text {
   color: #344775 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 11.5px !important;
+  transition: color 0.2s ease !important;
 }
 
-.main-button.is-transparent:hover {
-  background-color: #F0FAFA !important;
+.main-button.is-transparent:hover,
+.services-3-item:hover .main-button.is-transparent,
+.blog-item:hover .main-button.is-transparent,
+.listing-3-link:hover .main-button.is-transparent {
+  background-color: #087F8C !important;
   border-color: #087F8C !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(8, 127, 140, 0.25) !important;
 }
 
-.main-button.is-transparent:hover .button-text {
+.main-button.is-transparent:hover .button-text,
+.services-3-item:hover .main-button.is-transparent .button-text,
+.blog-item:hover .main-button.is-transparent .button-text,
+.listing-3-link:hover .main-button.is-transparent .button-text {
+  color: #FFFFFF !important;
+}
+
+/* 3. Circular "Discover" CTA Buttons */
+.main-circle-button {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.circle-button-border-1 {
+  border: 1.5px solid #087F8C !important;
+  border-radius: 50% !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  box-shadow: 0 4px 16px rgba(8, 127, 140, 0.18) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.circle-button-text-1 {
   color: #087F8C !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  transition: color 0.25s ease !important;
 }
 
-/* Forms across site */
+.circle-button-icon-1 {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(85%) saturate(1476%) hue-rotate(155deg) brightness(94%) contrast(92%) !important;
+  transition: filter 0.25s ease, transform 0.25s ease !important;
+}
+
+.main-circle-button:hover .circle-button-border-1,
+.listing-2-link-block-3:hover .circle-button-border-1,
+.listing-2-link-block-2:hover .circle-button-border-1,
+.listing-2-link-block:hover .circle-button-border-1 {
+  background-color: #087F8C !important;
+  border-color: #066772 !important;
+  box-shadow: 0 6px 22px rgba(8, 127, 140, 0.35) !important;
+  transform: scale(1.08) !important;
+}
+
+.main-circle-button:hover .circle-button-text-1,
+.listing-2-link-block-3:hover .circle-button-text-1,
+.listing-2-link-block-2:hover .circle-button-text-1,
+.listing-2-link-block:hover .circle-button-text-1 {
+  color: #FFFFFF !important;
+}
+
+.main-circle-button:hover .circle-button-icon-1,
+.listing-2-link-block-3:hover .circle-button-icon-1,
+.listing-2-link-block-2:hover .circle-button-icon-1,
+.listing-2-link-block:hover .circle-button-icon-1 {
+  filter: brightness(0) invert(1) !important;
+  transform: translateX(4px) !important;
+}
+
+/* Hide circular button in Hero only (since Dual CTAs are present there) */
+.main-hero .main-circle-button,
+.main-hero .circle-button-border-1,
+.main-hero .circle-button-icon-1 {
+  display: none !important;
+}
+
+/* 4. Form Submit Buttons & Form Controls across entire site */
 .w-input,
 .newsletter-field,
 .form-input,
-.text-field {
+.text-field,
+.form-field.on-dark-bg {
   background-color: #FFFFFF !important;
   color: #344775 !important;
   border: 1px solid #C8DCDC !important;
   border-radius: 4px !important;
+  padding: 12px 14px !important;
 }
 
 .w-input:focus,
-.newsletter-field:focus {
+.newsletter-field:focus,
+.form-input:focus,
+.text-field:focus,
+.form-field.on-dark-bg:focus {
   border-color: #087F8C !important;
   box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.15) !important;
 }
 
+.form-block-3,
+.form.on-dark-bg {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.16) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 30px rgba(52, 71, 117, 0.08) !important;
+  padding: 36px 32px !important;
+}
+
+.checkbox-label,
+.w-form-label {
+  color: #344775 !important;
+  font-size: 13px !important;
+}
+
+.w-checkbox-input,
+.checkbox {
+  border-color: #087F8C !important;
+}
+
 .newsletter-submit-button,
 .submit-button,
-.form-button {
+.form-button,
+.form-submit-button,
+.w-button {
   background-color: #087F8C !important;
   color: #FFFFFF !important;
-  border: none !important;
-  border-radius: 4px !important;
-  transition: background-color 0.2s ease !important;
+  border: 1px solid #087F8C !important;
+  border-radius: 6px !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 13px 28px !important;
+  box-shadow: 0 4px 14px rgba(8, 127, 140, 0.25) !important;
+  transition: all 0.25s ease !important;
   cursor: pointer !important;
 }
 
 .newsletter-submit-button:hover,
 .submit-button:hover,
-.form-button:hover {
+.form-button:hover,
+.form-submit-button:hover,
+.w-button:hover {
   background-color: #066772 !important;
+  border-color: #066772 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.35) !important;
 }
 
-/* Newsletter & Accordion blocks */
+/* 5. Ecommerce CTA Buttons (Add to Cart, Buy Now, Cart Buttons) */
+.w-commerce-commerceaddtocartbutton,
+.add-to-cart-button,
+.buy-now-button,
+.w-commerce-commercebuynowbutton,
+.cart-submit-button,
+.w-commerce-commercecartcheckoutbutton {
+  background-color: #087F8C !important;
+  color: #FFFFFF !important;
+  border: 1px solid #087F8C !important;
+  border-radius: 6px !important;
+  padding: 13px 26px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 14px rgba(8, 127, 140, 0.22) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.w-commerce-commerceaddtocartbutton:hover,
+.add-to-cart-button:hover,
+.buy-now-button:hover,
+.w-commerce-commercebuynowbutton:hover,
+.cart-submit-button:hover,
+.w-commerce-commercecartcheckoutbutton:hover {
+  background-color: #066772 !important;
+  border-color: #066772 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.32) !important;
+}
+
+.cart-button {
+  background-color: #d8ebf0 !important;
+  color: #344775 !important;
+  border: 1px solid rgba(8, 127, 140, 0.16) !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.cart-button:hover {
+  background-color: #c7e3e9 !important;
+}
+
+/* ==========================================================================
+   SERVICES, PRODUCTS & CONTENT SECTIONS (CLINIC LIGHT THEME)
+   ========================================================================== */
+
+/* Explore Services Cards (.listing-2) */
+.listing-2-item {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.15) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.listing-2-item:hover {
+  border-color: rgba(8, 127, 140, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(8, 127, 140, 0.12) !important;
+  transform: translateY(-4px) !important;
+}
+
+.listing-2-item ._3d-block {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+}
+
+.listing-2-item .cover-image {
+  display: block !important;
+  opacity: 0.92 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  filter: brightness(1.02) contrast(0.98) !important;
+}
+
+.listing-2-content-2 {
+  position: relative !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 250, 250, 0.98) 100%) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding: 24px 30px !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.listing-2-item .main-circle-button {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.listing-heading-uni-1 {
+  color: #344775 !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+}
+
+.listing-text.is-smaller {
+  color: #4e6284 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.listing-gradient-color {
+  display: none !important;
+}
+
+/* Products Section Header (.header-5) */
+.header-5 {
+  background-color: #F0FAFA !important;
+  padding: 80px 0 !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
+}
+
+.header-5-box {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.16) !important;
+  border-radius: 10px !important;
+  padding: 48px !important;
+  box-shadow: 0 8px 30px rgba(52, 71, 117, 0.06) !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.header-5-image img {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+/* Products Grid (.listing-3) */
+.listing-3.with-dark-bg {
+  background-color: #FFFFFF !important;
+}
+
+.services-3-item {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.services-3-item:hover {
+  border-color: rgba(8, 127, 140, 0.3) !important;
+  box-shadow: 0 10px 28px rgba(8, 127, 140, 0.12) !important;
+  transform: translateY(-4px) !important;
+}
+
+.services-3-item ._3d-block {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+}
+
+.services-3-item .listing-3-content {
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: #FFFFFF !important;
+  border-radius: 8px !important;
+  margin: 18px !important;
+  box-shadow: 0 4px 20px rgba(52, 71, 117, 0.12) !important;
+  padding: 22px !important;
+}
+
+.listing-3-background-color {
+  display: none !important;
+}
+
+/* Category Cards (.section-listing-7) */
+.section-listing-7 {
+  background-color: #F0FAFA !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
+}
+
+.listing-7-item {
+  border: 1px solid rgba(8, 127, 140, 0.15) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.listing-7-item:hover {
+  border-color: #087F8C !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 28px rgba(8, 127, 140, 0.14) !important;
+}
+
+.listing-7-name {
+  color: #344775 !important;
+  font-weight: 600 !important;
+}
+
+.listing-7-icon {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(85%) saturate(1476%) hue-rotate(155deg) brightness(94%) contrast(92%) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.listing-7-link:hover .listing-7-icon {
+  transform: translateX(4px) !important;
+}
+
+/* About & Consultation blocks (.content-grid-2) */
+.about-block.is-2nd {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 14px rgba(52, 71, 117, 0.04) !important;
+}
+
+.about-title {
+  color: #344775 !important;
+  font-weight: 600 !important;
+}
+
+.about-text {
+  color: #4e6284 !important;
+}
+
+/* Testimonials / Approach (.container.is-testimonial) */
+.review-cms-item {
+  position: relative !important;
+  border: 1px solid rgba(8, 127, 140, 0.18) !important;
+  border-radius: 8px !important;
+  padding: 28px !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.08) !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.review-cms-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 28px rgba(8, 127, 140, 0.18) !important;
+}
+
+.review-cms-item .review-cms-guest-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 1 !important;
+}
+
+.review-cms-item::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(14, 25, 48, 0.55) 0%, rgba(14, 25, 48, 0.90) 100%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.review-cms-text {
+  position: relative !important;
+  z-index: 3 !important;
+  color: #FFFFFF !important;
+  font-size: 1.12rem !important;
+  line-height: 1.6 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.review-cms-guest-name {
+  position: relative !important;
+  z-index: 3 !important;
+  color: #00d2d3 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Blog Cards (.blogs, .blog-item) */
+.blog-item {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.14) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.blog-item:hover {
+  border-color: rgba(8, 127, 140, 0.35) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(8, 127, 140, 0.12) !important;
+}
+
+.blog-category-text-1 {
+  color: #50366E !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Subpage CTA Banners (.cta-1-container) */
+.cta-1-container {
+  background-color: #F0FAFA !important;
+  border: 1px solid rgba(8, 127, 140, 0.15) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.cta-1-title {
+  color: #344775 !important;
+}
+
+.cta-1-text {
+  color: #4e6284 !important;
+}
+
+.cta-1-overlay-color {
+  background: linear-gradient(180deg, rgba(240, 250, 250, 0.85) 0%, rgba(240, 250, 250, 0.95) 100%) !important;
+}
+
+/* Newsletter */
 .newsletter {
   background-color: #F0FAFA !important;
   border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
@@ -1158,6 +1725,7 @@ body.has-promo .main-hero {
   color: #344775 !important;
 }
 
+/* Accordions */
 .accordion-toggle {
   background-color: #FFFFFF !important;
   border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
@@ -1172,42 +1740,7 @@ body.has-promo .main-hero {
   background-color: #F0FAFA !important;
 }
 
-.list-block {
-  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
-}
-
-.list-title {
-  color: #344775 !important;
-}
-
-.list-text {
-  color: #4e6284 !important;
-}
-
-/* Cards & listings */
-.listing-1-item,
-.service-item,
-.treatment-item,
-.blog-item {
-  background-color: #FFFFFF !important;
-  border: 1px solid rgba(8, 127, 140, 0.12) !important;
-  border-radius: 6px !important;
-  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
-}
-
-.listing-1-link,
-.service-link,
-.treatment-link,
-.blog-link {
-  color: #344775 !important;
-}
-
-.blog-name,
-.listing-title {
-  color: #344775 !important;
-}
-
-/* Footer in clinic light theme */
+/* Footer & Discover the menu CTA */
 .footer-wrap,
 .footer {
   background-color: #FFFFFF !important;
@@ -1223,12 +1756,24 @@ body.has-promo .main-hero {
 }
 
 .footer-open-menu-link {
-  background-color: #F0FAFA !important;
-  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+  background-color: #d8ebf0 !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.16) !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.footer-open-menu-link:hover {
+  background-color: #c7e3e9 !important;
 }
 
 .footer-open-menu-link-text {
   color: #344775 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+.footer-open-menu-link-icon {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(85%) saturate(1476%) hue-rotate(155deg) brightness(94%) contrast(92%) !important;
 }
 
 .subfooter-1-black {
@@ -1240,8 +1785,3 @@ body.has-promo .main-hero {
   color: #4e6284 !important;
 }
 
-.main-hero .main-circle-button,
-.main-hero .circle-button-border-1,
-.main-hero .circle-button-icon-1 {
-  display: none !important;
-}
