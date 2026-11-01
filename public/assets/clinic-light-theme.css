@@ -1,9 +1,91 @@
 /* ==========================================================================
-   HEAVENLY FACES - PROMO BAR & WELCOME OFFER MODAL
-   Preserves original Webflow theme, typography, hero, and navigation.
+   HEAVENLY FACES - BRIGHT CLINIC LIGHT THEME OVERHAUL
+   Palette:
+     Main background:     White #FFFFFF
+     Section background:  Pale aqua #F0FAFA
+     Headings:            Deep blue #344775
+     Booking buttons:     Deep teal #087F8C
+     Small accents:       Purple #50366E
    ========================================================================== */
 
-/* Top Promo Bar (Teal #087F8C) */
+:root {
+  --hf-bg-main: #FFFFFF;
+  --hf-bg-section: #F0FAFA;
+  --hf-bg-pale-aqua: #F0FAFA;
+  --hf-aqua-tint: #E2F3F3;
+  --hf-heading-blue: #344775;
+  --hf-text-dark: #344775;
+  --hf-text-muted: #4e6284;
+  --hf-btn-teal: #087F8C;
+  --hf-btn-teal-hover: #066772;
+  --hf-accent-purple: #50366E;
+  --hf-accent-purple-light: #7c5a9e;
+  --hf-border-light: rgba(8, 127, 140, 0.14);
+
+  /* Webflow root token overrides for light clinic atmosphere */
+  --main-background: #FFFFFF;
+  --midnight-purple: #344775;
+  --purple-black: #F0FAFA;
+  --thistle: #F0FAFA;
+  --dark-slate-blue: #344775;
+  --light-blue: #F0FAFA;
+  --midnight-blue: #344775;
+  --pale-violet-red: #344775;
+  --medium-violet-red: #087F8C;
+  --black: #344775;
+  --dark-slate-grey: #344775;
+}
+
+/* ==========================================================================
+   GLOBAL BASE
+   ========================================================================== */
+html, body {
+  background-color: #FFFFFF !important;
+  color: #344775 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper,
+.page-wrapper.is-dark {
+  background-color: #FFFFFF !important;
+  color: #344775 !important;
+  position: relative !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.heading,
+.heading.is-header-4-title-1,
+.heading.is-header-image-1-title-1,
+.heading.is-content-grid-1-title,
+.heading.is-small-title,
+.heading.is-medium-title,
+.heading.is-large-title,
+.heading.is-regular-title,
+.heading.is-extra-small-title,
+.listing-heading-uni-1,
+.listing-heading-uni-2,
+.list-title {
+  color: #344775 !important;
+}
+
+/* Body & paragraph text */
+p,
+.content-grid-9-text-1,
+.content-grid-3-text-1,
+.listing-text,
+.grid-6-text-2,
+.header-5-text,
+.listing-7-link-content,
+.content-text-1 {
+  color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   TOP PROMO BAR (TEAL #087F8C)
+   ========================================================================== */
 .promo-bar {
   background-color: #087F8C !important;
   color: #FFFFFF !important;
@@ -17,7 +99,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 0 48px 0 24px;
   display: flex;
@@ -46,7 +128,7 @@
   text-decoration: underline !important;
   text-underline-offset: 3px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   transition: opacity 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -79,20 +161,617 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Offset navbar and corner buttons cleanly when promo bar is active */
-body.has-promo .navbar,
-body.has-promo .menu-button,
-body.has-promo .nav-cta-button {
+/* ==========================================================================
+   NAVBAR (WHITE & AQUA CLINIC BRANDING - MATCHING REFERENCE IMAGE 2)
+   ========================================================================== */
+body.has-promo .navbar {
   top: 38px !important;
 }
 
+.navbar {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  box-shadow: 0 1px 4px rgba(8, 127, 140, 0.06) !important;
+  z-index: 998 !important;
+  transition: top 0.2s ease;
+}
+
+/* Menu button on the left */
+body.has-promo .navbar .menu-button {
+  top: 0 !important;
+}
+
+.navbar .menu-button {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: auto !important;
+  background-color: #d8ebf0 !important;
+  color: #344775 !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border-right: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-radius: 0 !important;
+  transition: background-color 0.2s ease !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+}
+
+.navbar .menu-button:hover {
+  background-color: #c7e3e9 !important;
+}
+
+.navbar .menu-button .nav-button-icon {
+  width: 15px !important;
+  height: 15px !important;
+  filter: brightness(0) saturate(100%) invert(26%) sepia(21%) saturate(1637%) hue-rotate(185deg) brightness(92%) contrast(89%) !important;
+}
+
+.navbar .menu-button .menu-link-title {
+  color: #344775 !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+/* Main Navigation center */
+.navbar .main-nav {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2.2em !important;
+}
+
+.navbar .nav-block-1,
+.navbar .nav-block-2,
+.navbar .nav-block-3 {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar .nav-block-1 {
+  gap: 2em !important;
+}
+
+.navbar .nav-block-3 {
+  gap: 2em !important;
+}
+
+/* Nav links & dropdowns */
+.navbar .dropdown-toggle,
+.navbar .nav-link {
+  color: #344775 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+.navbar .dropdown-toggle .menu-link-title,
+.navbar .nav-link .menu-link-title,
+.navbar .dropdown-icon {
+  color: #344775 !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.14em !important;
+  transition: color 0.2s ease !important;
+}
+
+.navbar .dropdown-toggle:hover .menu-link-title,
+.navbar .nav-link:hover .menu-link-title {
+  color: #50366E !important;
+}
+
+/* Brand logo center */
+.navbar .brand-name {
+  color: #344775 !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.26em !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+}
+
+.navbar .brand-link-block {
+  padding: 0 1.5em !important;
+}
+
+/* Far-right CTA button: BOOK NOW -> (Matching Reference Image 2) */
+body.has-promo .navbar .nav-cta-button {
+  top: 0 !important;
+}
+
+.navbar .nav-cta-button {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: auto !important;
+  background-color: #087F8C !important;
+  color: #FFFFFF !important;
+  padding: 0 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0 !important;
+  transition: background-color 0.2s ease !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  text-decoration: none !important;
+}
+
+.navbar .nav-cta-button:hover {
+  background-color: #066772 !important;
+}
+
+.navbar .nav-cta-button .menu-link-title {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+.navbar .nav-cta-button .nav-button-icon,
+.navbar .nav-cta-button .nav-cta-arrow {
+  width: 14px !important;
+  height: 14px !important;
+  color: #FFFFFF !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Dropdown menus */
+.dropdown-list.w--open {
+  background-color: #FFFFFF !important;
+  border-radius: 6px !important;
+  box-shadow: 0 20px 40px rgba(52, 71, 117, 0.12) !important;
+  border: 1px solid rgba(8, 127, 140, 0.1) !important;
+  top: 58px !important;
+}
+
+.dropdown-list .menu-link-name {
+  color: #344775 !important;
+}
+
+.dropdown-list .menu-link:hover .menu-link-name {
+  color: #50366E !important;
+}
+
 /* ==========================================================================
-   POPUP MODAL (£50 OFF WELCOME OFFER)
+   LEFT SLIDE-OUT MENU (.fullscreen-menu) - HIGH CONTRAST & ACCESSIBLE UI/UX
+   ========================================================================== */
+.fullscreen-menu {
+  z-index: 9999 !important;
+  background-color: #FFFFFF !important;
+}
+
+.fullscreen-menu-bg {
+  background-color: #FFFFFF !important;
+  opacity: 0.98 !important;
+}
+
+.fullscreen-inner {
+  background-color: #FFFFFF !important;
+}
+
+/* Column 1: Links list with high contrast */
+.fullscreen-menu-column-1 {
+  background-color: #FFFFFF !important;
+  border-right: 1px solid rgba(8, 127, 140, 0.15) !important;
+  box-shadow: 6px 0 24px rgba(52, 71, 117, 0.04) !important;
+  padding: 10vh 8em 10vh 14em !important;
+  z-index: 10 !important;
+}
+
+.fullscreen-main-links {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.5vh !important;
+}
+
+/* Link typography: Deep contrast navy #1A2849 (13.5:1 WCAG AAA ratio on white) */
+.fullscreen-menu-link {
+  color: #1A2849 !important;
+  font-family: 'Clash Display Variable', Poppins, -apple-system, sans-serif !important;
+  font-size: clamp(18px, 3.2vh, 32px) !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.02em !important;
+  padding: 0.8vh 0 !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  text-decoration: none !important;
+}
+
+.fullscreen-menu-link:hover {
+  color: #087F8C !important;
+  padding-left: 12px !important;
+  font-weight: 600 !important;
+}
+
+.fullscreen-menu-link.w--current {
+  color: #087F8C !important;
+  font-weight: 600 !important;
+}
+
+.fullscreen-menu-link.w--current::before {
+  content: "•";
+  color: #087F8C;
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+/* Close button on the far left - High contrast, intuitive UI/UX with ✕ and CLOSE text */
+.close-button {
+  background-color: #d8ebf0 !important;
+  border-right: 1px solid rgba(8, 127, 140, 0.22) !important;
+  width: 7.5em !important;
+  cursor: pointer !important;
+  transition: background-color 0.25s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  z-index: 9999 !important;
+}
+
+.close-button:hover {
+  background-color: #087F8C !important;
+}
+
+.close-button-bg {
+  background: none !important;
+  display: none !important;
+}
+
+.close-button::before {
+  content: "✕";
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: #1A2849 !important;
+  line-height: 1 !important;
+  transition: color 0.2s ease, transform 0.25s ease !important;
+}
+
+.close-button::after {
+  content: "CLOSE";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #1A2849 !important;
+  line-height: 1 !important;
+  transition: color 0.2s ease !important;
+}
+
+.close-button:hover::before {
+  color: #FFFFFF !important;
+  transform: rotate(90deg) scale(1.1) !important;
+}
+
+.close-button:hover::after {
+  color: #FFFFFF !important;
+}
+
+/* Responsive Menu styles for tablets & mobiles (<= 991px) */
+@media screen and (max-width: 991px) {
+  .fullscreen-inner {
+    flex-direction: column !important;
+    overflow-y: auto !important;
+  }
+  .close-button {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 52px !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(8, 127, 140, 0.2) !important;
+  }
+  .fullscreen-menu-column-1 {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 36px 24px 24px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(8, 127, 140, 0.15) !important;
+    align-items: center !important;
+  }
+  .fullscreen-main-links {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+  .fullscreen-menu-link {
+    font-size: 20px !important;
+    padding: 6px 0 !important;
+  }
+  .fullscreen-menu-column-2 {
+    width: 100% !important;
+    padding: 24px 20px 40px !important;
+  }
+}
+
+/* Column 2: Right panel with airy clinic image wash */
+.fullscreen-menu-column-2 {
+  background-color: #F0FAFA !important;
+  position: relative !important;
+}
+
+.fullscreen-image-column {
+  padding: 3vw !important;
+}
+
+.fullscreen-image-block {
+  border: 1px solid rgba(8, 127, 140, 0.15) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.fullscreen-image-block .menu-image-color {
+  background-color: #EBF7F7 !important;
+  opacity: 0.1 !important;
+}
+
+.fullscreen-image-block .menu-cover-image {
+  opacity: 0.88 !important;
+  filter: brightness(1.02) contrast(1) saturate(0.95) !important;
+}
+
+/* Social icons in menu - matching reference image */
+.socials-in-menu {
+  position: absolute !important;
+  z-index: 50 !important;
+  bottom: 72px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.socials-in-menu .socials-1-list {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.socials-in-menu .social-1-link-block {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(26, 40, 73, 0.12) !important;
+  transition: all 0.2s ease !important;
+}
+
+.socials-in-menu .social-icon {
+  width: 18px !important;
+  height: 18px !important;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(35%) saturate(1476%) hue-rotate(189deg) brightness(94%) contrast(92%) !important;
+}
+
+.socials-in-menu .social-1-link-block:hover {
+  background-color: #087F8C !important;
+  border-color: #087F8C !important;
+  transform: translateY(-2px);
+}
+
+.socials-in-menu .social-1-link-block:hover .social-icon {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* ==========================================================================
+   HERO SECTION (BRIGHT, AIRY CLINIC FEEL - MATCHING REFERENCE IMAGE 2)
+   ========================================================================== */
+.main-hero {
+  position: relative !important;
+  background-color: #F0FAFA !important;
+  overflow: hidden !important;
+  min-height: 88vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 58px !important;
+}
+
+body.has-promo .main-hero {
+  padding-top: 96px !important;
+}
+
+.hero-absolute-image {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background-color: #EBF7F7 !important;
+}
+
+/* High-key clinic wash over the model photograph */
+.hero-absolute-image .cover-image {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.45 !important;
+  filter: brightness(1.14) contrast(0.96) saturate(0.55) !important;
+}
+
+/* Luminous pale cyan-aqua wash matching reference image 2 */
+.hero-absolute-image .main-hero-overlay,
+.main-hero-overlay {
+  background: linear-gradient(180deg, rgba(225, 247, 248, 0.86) 0%, rgba(238, 252, 252, 0.92) 100%) !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+}
+
+.hero-absolute-image .animation-color-bg,
+.hero-absolute-image .animation-color-bg.is-purple-dark {
+  background-color: #EBF7F8 !important;
+  opacity: 0.15 !important;
+}
+
+.main-hero-layout {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 5em 2em !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.main-hero-content {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.main-hero-image {
+  display: none !important;
+}
+
+.uppercase-title-dark {
+  color: #344775 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.2em !important;
+  opacity: 1 !important;
+  text-align: center !important;
+}
+
+.heading.is-header-4-title-1 {
+  color: #344775 !important;
+  font-family: 'Clash Display Variable', 'Clash Display', sans-serif !important;
+  font-size: 5.6em !important;
+  font-weight: 200 !important;
+  line-height: 1.05em !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  margin: 0 auto 0.6em auto !important;
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 991px) {
+  .heading.is-header-4-title-1 {
+    font-size: 3.8em !important;
+  }
+}
+@media screen and (max-width: 479px) {
+  .heading.is-header-4-title-1 {
+    font-size: 2.6em !important;
+  }
+}
+
+/* Hero CTA Button Group (Matching Reference Image 2) */
+.hero-cta-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-top: 1.8em !important;
+  flex-wrap: wrap !important;
+  z-index: 20 !important;
+  position: relative !important;
+}
+
+.hero-btn-teal {
+  background-color: #087F8C !important;
+  color: #FFFFFF !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  padding: 13px 28px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(8, 127, 140, 0.25) !important;
+  border: 1px solid #087F8C !important;
+  cursor: pointer;
+}
+
+.hero-btn-teal:hover {
+  background-color: #066772 !important;
+  border-color: #066772 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.35) !important;
+}
+
+.hero-btn-outline {
+  background-color: #FFFFFF !important;
+  color: #344775 !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  padding: 13px 28px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border: 1.5px solid #344775 !important;
+  transition: all 0.25s ease !important;
+  cursor: pointer;
+}
+
+.hero-btn-outline:hover {
+  background-color: #F0FAFA !important;
+  border-color: #087F8C !important;
+  color: #087F8C !important;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   POPUP MODAL (£50 OFF WELCOME OFFER - MATCHING REFERENCE IMAGE 1)
    ========================================================================== */
 .hf-popup-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 10, 24, 0.65);
+  background-color: rgba(20, 35, 55, 0.55);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 99999;
@@ -349,4 +1028,220 @@ body.has-promo .nav-cta-button {
   color: #4e6284;
   font-size: 13.5px;
   line-height: 1.5;
+}
+
+/* ==========================================================================
+   SUBPAGE SECTIONS & GLOBAL COMPONENTS (CLINIC LIGHT THEME)
+   ========================================================================== */
+.section.with-green-bg,
+.section.with-midnight-purple-blue-bg,
+.section.with-gradient-pink-bg,
+.section.visible-overflow-dark-bg,
+.section.with-purple-black-bg,
+.section-listing-7,
+.listing-3.with-dark-bg,
+.header-5 {
+  background-color: #F0FAFA !important;
+  color: #344775 !important;
+}
+
+.last-section-dark-color,
+.last-section-purple-color,
+.first-section-dark-color {
+  background-color: #F0FAFA !important;
+}
+
+/* Subpage header blocks */
+.header-image-1,
+.header-wrap {
+  background-color: #FFFFFF !important;
+  color: #344775 !important;
+}
+
+.header-image-1-title,
+.header-image-1-title-1,
+.header-5-box h3,
+.heading.is-sticky-title,
+.content-section-1-title {
+  color: #344775 !important;
+}
+
+.header-image-1-gradient-color,
+.bg-overlay-color {
+  background: linear-gradient(180deg, rgba(240, 250, 250, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%) !important;
+}
+
+/* Buttons across site */
+.main-button,
+.main-button-2 {
+  background-color: #087F8C !important;
+  color: #FFFFFF !important;
+  border: 1px solid #087F8C !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.main-button:hover,
+.main-button-2:hover {
+  background-color: #066772 !important;
+  border-color: #066772 !important;
+}
+
+.main-button .button-text,
+.main-button-2 .button-text {
+  color: #FFFFFF !important;
+}
+
+/* Outlined buttons */
+.main-button.is-transparent {
+  background-color: #FFFFFF !important;
+  color: #344775 !important;
+  border: 1px solid #344775 !important;
+}
+
+.main-button.is-transparent .button-text {
+  color: #344775 !important;
+}
+
+.main-button.is-transparent:hover {
+  background-color: #F0FAFA !important;
+  border-color: #087F8C !important;
+}
+
+.main-button.is-transparent:hover .button-text {
+  color: #087F8C !important;
+}
+
+/* Forms across site */
+.w-input,
+.newsletter-field,
+.form-input,
+.text-field {
+  background-color: #FFFFFF !important;
+  color: #344775 !important;
+  border: 1px solid #C8DCDC !important;
+  border-radius: 4px !important;
+}
+
+.w-input:focus,
+.newsletter-field:focus {
+  border-color: #087F8C !important;
+  box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.15) !important;
+}
+
+.newsletter-submit-button,
+.submit-button,
+.form-button {
+  background-color: #087F8C !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 4px !important;
+  transition: background-color 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.newsletter-submit-button:hover,
+.submit-button:hover,
+.form-button:hover {
+  background-color: #066772 !important;
+}
+
+/* Newsletter & Accordion blocks */
+.newsletter {
+  background-color: #F0FAFA !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
+}
+
+.newsletter-text,
+.newsletter-text-2,
+.newsletter-text-1 {
+  color: #344775 !important;
+}
+
+.accordion-toggle {
+  background-color: #FFFFFF !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.accordion-title {
+  color: #344775 !important;
+}
+
+.accordion-content {
+  background-color: #F0FAFA !important;
+}
+
+.list-block {
+  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
+}
+
+.list-title {
+  color: #344775 !important;
+}
+
+.list-text {
+  color: #4e6284 !important;
+}
+
+/* Cards & listings */
+.listing-1-item,
+.service-item,
+.treatment-item,
+.blog-item {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
+}
+
+.listing-1-link,
+.service-link,
+.treatment-link,
+.blog-link {
+  color: #344775 !important;
+}
+
+.blog-name,
+.listing-title {
+  color: #344775 !important;
+}
+
+/* Footer in clinic light theme */
+.footer-wrap,
+.footer {
+  background-color: #FFFFFF !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.footer-link-large {
+  color: #344775 !important;
+}
+
+.footer-link-large:hover {
+  color: #087F8C !important;
+}
+
+.footer-open-menu-link {
+  background-color: #F0FAFA !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.footer-open-menu-link-text {
+  color: #344775 !important;
+}
+
+.subfooter-1-black {
+  background-color: #F0FAFA !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
+}
+
+.subfooter-1-black .footer-link.is-2nd {
+  color: #4e6284 !important;
+}
+
+.main-hero .main-circle-button,
+.main-hero .circle-button-border-1,
+.main-hero .circle-button-icon-1 {
+  display: none !important;
 }
