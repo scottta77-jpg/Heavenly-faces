@@ -1598,6 +1598,87 @@ body.has-promo .main-hero {
   color: #f0c8e0 !important;
 }
 
+/* ==========================================================================
+   PRODUCT CARDS & DETAIL (PRESERVE WHITE TEXT ON PRODUCT BACKDROP)
+   ========================================================================== */
+.product-size {
+  color: #FFFFFF !important;
+}
+
+.heading.is-product-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+}
+
+.product-description-1 {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.product-price {
+  color: #f0c8e0 !important;
+  background-color: rgba(51, 40, 100, 0.45) !important;
+  border: 1px solid rgba(240, 200, 224, 0.35) !important;
+  text-shadow: none !important;
+}
+
+.product-small-link {
+  color: #f0c8e0 !important;
+}
+
+.product-small-link:hover {
+  color: #FFFFFF !important;
+}
+
+/* Ensure product overlay gradient provides solid contrast behind white text */
+.product-background-color {
+  background-image: linear-gradient(to bottom, rgba(10, 3, 24, 0.35) 20%, rgba(17, 12, 35, 0.85) 75%, #15112a) !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* Homepage Product Grid (.services-3-item in .listing-3) */
+.services-3-item .listing-heading-uni-1 {
+  color: #344775 !important;
+}
+
+.services-3-item .listing-text {
+  color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   ACCENT & CONTRAST FIXES (PREVENT WHITE-ON-WHITE / POOR CONTRAST)
+   ========================================================================== */
+/* Fix stats number clash in .content-grid-1 (e.g. 30+, 1, 30 on about page) */
+.content-grid-1-text-2 {
+  color: #50366E !important; /* Elegant clinic purple accent */
+  font-weight: 700 !important;
+}
+
+.content-grid-1-text-1 {
+  color: #344775 !important;
+  font-weight: 600 !important;
+}
+
+/* Fix services/treatments related links heading contrast (.listing-4-heading) */
+.listing-4-heading {
+  color: #344775 !important;
+}
+
+.listing-4-heading:hover {
+  color: #087F8C !important;
+}
+
+/* Ecommerce error and out-of-stock messages on light backgrounds */
+.w-commerce-commerceaddtocartoutofstock,
+.out-of-stock-state,
+.w-commerce-commerceaddtocarterror,
+.error-state {
+  color: #344775 !important;
+  background-color: #F0FAFA !important;
+  border: 1px solid rgba(8, 127, 140, 0.2) !important;
+}
+
 /* About & Consultation blocks (.content-grid-2) */
 .about-block.is-2nd {
   background-color: #FFFFFF !important;
