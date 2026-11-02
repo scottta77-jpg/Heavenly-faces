@@ -33,7 +33,12 @@
     },
     {
       "source": "/products.html",
-      "destination": "/products",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/shop",
       "permanent": true
     },
     {
@@ -192,8 +197,8 @@
       "destination": "/services/index.html"
     },
     {
-      "source": "/products",
-      "destination": "/products/index.html"
+      "source": "/shop",
+      "destination": "/shop/index.html"
     },
     {
       "source": "/skin-types",
