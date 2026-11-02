@@ -1485,6 +1485,12 @@ body.has-promo .main-hero {
   font-weight: 600 !important;
 }
 
+/* Explore section cards: restore original template colour */
+.listing-2-link-block-3 .listing-heading-uni-1,
+.listing-2-item .listing-heading-uni-1 {
+  color: #f0c8e0 !important;
+}
+
 .listing-text.is-smaller {
   color: #4e6284 !important;
   font-size: 13px !important;
