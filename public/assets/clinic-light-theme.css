@@ -1044,7 +1044,6 @@ body.has-promo .main-hero {
 .section.with-gradient-pink-bg,
 .section.visible-overflow-dark-bg,
 .section.with-purple-black-bg,
-.section-listing-7,
 .listing-3.with-dark-bg,
 .header-5,
 .header-3,
@@ -1570,40 +1569,33 @@ body.has-promo .main-hero {
   display: none !important;
 }
 
-/* Category Cards (.section-listing-7) */
+/* Category Cards (.section-listing-7) - original template styling */
 .section-listing-7 {
-  background-color: #F0FAFA !important;
-  border-top: 1px solid rgba(8, 127, 140, 0.1) !important;
-  border-bottom: 1px solid rgba(8, 127, 140, 0.1) !important;
+  background-color: #1e1927 !important;
 }
 
 .listing-7-item {
-  border: 1px solid rgba(8, 127, 140, 0.15) !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  background-color: #FFFFFF !important;
-  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.05) !important;
-  transition: all 0.3s ease !important;
-}
-
-.listing-7-item:hover {
-  border-color: #087F8C !important;
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 28px rgba(8, 127, 140, 0.14) !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .listing-7-name {
-  color: #344775 !important;
-  font-weight: 600 !important;
+  color: #f0c8e0 !important;
+  font-weight: 400 !important;
 }
 
 .listing-7-icon {
-  filter: brightness(0) saturate(100%) invert(26%) sepia(85%) saturate(1476%) hue-rotate(155deg) brightness(94%) contrast(92%) !important;
+  filter: none !important;
   transition: transform 0.2s ease !important;
 }
 
 .listing-7-link:hover .listing-7-icon {
   transform: translateX(4px) !important;
+}
+
+.listing-7-link-content {
+  color: #f0c8e0 !important;
 }
 
 /* About & Consultation blocks (.content-grid-2) */
