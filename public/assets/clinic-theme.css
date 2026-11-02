@@ -1,0 +1,534 @@
+/* Heavenly Faces clinic palette.
+   Colour-only overrides: retain the original layout, imagery and interactions. */
+:root {
+  --clinic-paper: #f9fcfd;
+  --clinic-mist: #eaf5f7;
+  --clinic-ink: #163e63;
+  --clinic-teal: #00788c;
+  --clinic-teal-hover: #006174;
+  --clinic-line: #bfd7df;
+  --clinic-night: #153447;
+
+  /* Keep the template's variable names so existing components inherit the palette. */
+  --main-background: var(--clinic-paper);
+  --midnight-purple: var(--clinic-ink);
+  --dark-slate-blue: #345a74;
+  --dark-slate-grey: #345a67;
+  --purple-black: var(--clinic-night);
+  --midnight-blue: #163c50;
+  --black: #102c3e;
+  --thistle: #eaf5f7;
+  --light-blue: #dceff3;
+  --pale-violet-red: #236777;
+  --medium-violet-red: #006579;
+  --plum: #cce5eb;
+  --cadet-blue: #357989;
+}
+
+body,
+.page-wrapper.is-dark {
+  background-color: var(--clinic-paper);
+}
+
+::selection {
+  background-color: #c8e7ee;
+  color: var(--clinic-ink);
+}
+
+/* Navigation keeps a solid surface, including over photographs. */
+.navbar,
+.navbar-simple,
+.dropdown-list.w--open {
+  background-color: #fff;
+  color: var(--clinic-ink);
+}
+
+.navbar,
+.navbar-simple {
+  box-shadow: inset 0 -1px #d8e8ed;
+}
+
+.nav-link,
+.nav-2-link,
+.dropdown-toggle,
+.brand-name,
+.brand-name-2 {
+  color: var(--clinic-ink);
+}
+
+.nav-link:hover,
+.nav-link.w--current,
+.nav-2-link:hover,
+.dropdown-toggle:hover {
+  color: var(--clinic-teal-hover);
+}
+
+.menu-button,
+.nav-fixed-button {
+  background-color: #e0f0f4;
+  color: var(--clinic-ink);
+}
+
+.menu-button:hover,
+.nav-fixed-button:hover {
+  background-color: #cce6ed;
+}
+
+.nav-cta-button {
+  background-color: var(--clinic-teal);
+  color: #fff;
+}
+
+.nav-cta-button:hover {
+  background-color: var(--clinic-teal-hover);
+}
+
+.nav-cta-button .nav-button-icon {
+  filter: brightness(0) invert(1);
+}
+
+.dropdown-list.w--open {
+  box-shadow: 0 20px 35px #163e631c;
+}
+
+.menu-link {
+  background-color: #fff;
+  color: var(--clinic-ink);
+}
+
+.menu-link:hover,
+.menu-link.is-small:hover {
+  background-color: var(--clinic-mist);
+  color: var(--clinic-ink);
+}
+
+/* A white/aqua veil replaces the heavy purple multiply treatment.
+   Its minimum opacity keeps navy text readable even over the darkest image areas.
+   Webflow animates opacity inline, so only the colour veil is pinned to full opacity. */
+.main-hero,
+.header-4.is-dark,
+.header-image-1,
+.header-6,
+.header-slider-2 {
+  background-color: var(--clinic-mist);
+  color: var(--clinic-ink);
+}
+
+.main-hero-overlay {
+  background-image: linear-gradient(125deg, #f4fcfdd9, #eaf8fcc7 55%, #f8fcfdd1);
+  mix-blend-mode: normal;
+  opacity: 1 !important;
+}
+
+.hero-absolute-image > .sticky-block > .image-animation-trigger-vertical > .cover-image {
+  filter: saturate(0.35);
+}
+
+.header-4-bg-1,
+.header-4-bg-2 {
+  background-image: linear-gradient(135deg, #f9fcfd, #e5f3f6 55%, #f4fafb);
+  color: var(--clinic-ink);
+}
+
+.header-image-1 .bg-overlay-color,
+.header-6 .header-6-bg-color,
+.header-slider-2 .slider-gradient-color {
+  background-color: transparent;
+  background-image: linear-gradient(125deg, #f4fcfdd9, #eaf8fcc7 55%, #f8fcfdd1);
+  mix-blend-mode: normal;
+  opacity: 1 !important;
+}
+
+.header-image-1-gradient-color,
+.header-6-gradient-bottom {
+  background-image: linear-gradient(to bottom, #f9fcfd00, var(--clinic-paper));
+}
+
+.header-image-1 .heading,
+.header-image-1 .heading.is-header-image-1-title-1.is-2nd,
+.header-image-1 .uppercase-title-light,
+.header-6 .heading,
+.header-6 .heading.is-header-image-1-title-1.is-2nd,
+.header-6 .uppercase-title-light,
+.header-slider-2 .heading,
+.header-slider-2-title-1 {
+  color: var(--clinic-ink);
+}
+
+.header-bg-bottom-2 {
+  background-color: #edf8fbc9;
+}
+
+.slide-timeline {
+  background-color: #bfd7df;
+}
+
+.slider-timeline-bg {
+  background-color: var(--clinic-teal);
+}
+
+/* The first section beneath the main hero continues the airy opening. */
+.main-hero + .section.with-purple-black-bg {
+  --pale-violet-red: #236777;
+  background-color: var(--clinic-paper);
+  color: var(--clinic-ink);
+}
+
+.main-hero + .section .content-grid-3-text-1 {
+  color: #3d5c70;
+}
+
+.main-hero + .section .contact-grid-4-text {
+  color: #3d5c70;
+}
+
+.main-hero + .section .elipse-number,
+.main-hero + .section .uppercase-title-light,
+.main-hero + .section .list-title.is-light {
+  color: var(--clinic-ink);
+}
+
+.section.with-gradient-pink-bg {
+  background-image: linear-gradient(135deg, #f9fcfd, #e7f4f7);
+}
+
+.header-2.is-2nd {
+  background-color: var(--clinic-mist);
+}
+
+.section.sticky-content-sec .bg-color-for-sticky-sec-1 {
+  background-color: #edf9fbd9;
+  mix-blend-mode: normal;
+  opacity: 1 !important;
+}
+
+.section.sticky-content-sec .heading.is-large-uppercase-title-1 {
+  color: var(--clinic-ink);
+}
+
+.section.sticky-content-sec .scolling-image-1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #f4fcfdcc;
+  pointer-events: none;
+}
+
+/* Gallery sections and enquiry forms share the light clinic surfaces. */
+.page-gallery .section,
+.section.clinic-light-section {
+  --pale-violet-red: #236777;
+  --medium-violet-red: #006579;
+  background-color: var(--clinic-paper);
+  color: var(--clinic-ink);
+  border-color: var(--clinic-line);
+}
+
+.clinic-light-section .heading,
+.clinic-light-section .uppercase-title-light,
+.clinic-light-section .form,
+.clinic-light-section .form-block {
+  color: var(--clinic-ink);
+}
+
+.clinic-light-section .content-text-4,
+.clinic-light-section .content-grid-3-text-1 {
+  color: #3d5c70;
+}
+
+.clinic-light-section .form-block-3 {
+  background-color: #fff;
+  border-color: var(--clinic-line);
+}
+
+.clinic-light-section .form-field.on-dark-bg,
+.clinic-light-section .form-field.on-dark-bg.is-select {
+  background-color: #fff;
+  color: var(--clinic-ink);
+  border-bottom-color: #6f93a4;
+}
+
+.clinic-light-section .form-field.on-dark-bg::placeholder,
+.clinic-light-section .newsletter-field::placeholder {
+  color: #49697c;
+  opacity: 1;
+}
+
+.clinic-light-section .form-field.on-dark-bg:hover,
+.clinic-light-section .form-field.on-dark-bg:focus {
+  border-bottom-color: var(--clinic-teal);
+}
+
+.clinic-light-section .form-field option {
+  background-color: #fff;
+  color: var(--clinic-ink);
+}
+
+.clinic-light-section .checkbox.on-dark-bg {
+  border-color: #49697c;
+}
+
+.clinic-light-section .checkbox.on-dark-bg.w--redirected-checked {
+  background-color: var(--clinic-teal);
+  border-color: var(--clinic-teal);
+}
+
+.clinic-light-section .checkbox.on-dark-bg.w--redirected-focus {
+  background-color: var(--clinic-mist);
+}
+
+.clinic-light-section .checkbox.on-dark-bg.w--redirected-checked.w--redirected-focus {
+  background-color: var(--clinic-teal);
+}
+
+.clinic-light-section .form-success-message-1 {
+  background-color: var(--clinic-mist);
+  color: var(--clinic-ink);
+}
+
+.clinic-light-section .form-success-title,
+.clinic-light-section .form-success-title-2 {
+  color: var(--clinic-ink);
+}
+
+.clinic-light-section .newsletter-submit-button {
+  background-color: var(--clinic-teal);
+  border-color: var(--clinic-teal);
+  color: #fff;
+  background-image: url('/assets/clinic-arrow-white.svg');
+}
+
+.clinic-light-section .newsletter-submit-button:hover {
+  background-color: var(--clinic-teal-hover);
+}
+
+/* Keep product text readable throughout the image and scroll animations. */
+.listing-3.with-dark-bg .listing-3-background-color {
+  z-index: 15;
+  mix-blend-mode: normal;
+  background-image: linear-gradient(180deg, #15344714 10%, #153447b8 42%, #153447f2);
+  opacity: 1 !important;
+}
+
+/* Dark panels retain clear light text and a separate, readable accent. */
+:where(.section.with-purple-black-bg, .section.with-midnight-purple-blue-bg,
+  .content-grid-3.is-2nd, .container.with-bg-dark,
+  .fullscreen-menu, .form-block-1.is-black, .header-1.is-dark, .header-3) {
+  --pale-violet-red: #b7dce5;
+  --medium-violet-red: #d5edf2;
+}
+
+.content-grid-3-text-1,
+.content-grid-3-text-2,
+.content-text-4,
+.contact-grid-4-text,
+.header-3-subtitle-1,
+.header-3-subtitle-2,
+.header-3-subtitle-4,
+.header-3-subtitle-review {
+  color: #d7e9ee;
+}
+
+.content-grid-3-text-1.is-dark {
+  color: #3d5c70;
+}
+
+.uppercase-title-light {
+  color: #d5e9ef;
+}
+
+/* Echo the pale opening at the end of every page. */
+.footer,
+.footer-socials,
+.subfooter-1-black {
+  background-color: var(--clinic-paper);
+  color: var(--clinic-ink);
+  border-color: var(--clinic-line);
+}
+
+.footer-link,
+.footer-link-large,
+.footer-brand-link-block,
+.footer .brand-name,
+.footer-open-menu-link {
+  color: var(--clinic-ink);
+}
+
+.footer-brand-link-block,
+.footer-open-menu-link {
+  border-color: var(--clinic-line);
+}
+
+.footer-link.is-2nd {
+  color: #3d5c70;
+  opacity: 1;
+}
+
+.footer-link:hover,
+.footer-link-large:hover,
+.footer-link.w--current,
+.footer-link-large.w--current {
+  color: var(--clinic-teal-hover);
+}
+
+.footer-link:hover,
+.footer-link-large:hover {
+  border-bottom-color: var(--clinic-teal-hover);
+}
+
+.fullscreen-menu-link.w--current {
+  color: #fff;
+}
+
+.footer-open-menu-link {
+  background-color: var(--clinic-mist);
+}
+
+.footer-open-menu-link-bg {
+  background-color: #dceff3;
+}
+
+.subfooter-dot {
+  background-color: var(--clinic-ink);
+}
+
+.elipse,
+.elipse.is-2nd,
+.elipse.is-3rd,
+.elipse-bg,
+.elipse-bg.is-2nd,
+.elipse-bg.is-3rd {
+  border-color: #6f9daa;
+}
+
+.elipse-bg-footer,
+.elipse-bg-footer.is-2nd,
+.elipse-bg-footer.is-3rd {
+  border-color: var(--clinic-line);
+}
+
+.footer-open-menu-link-icon,
+.footer .social-icon,
+.footer-socials .social-icon {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(20%) saturate(1700%) hue-rotate(166deg) brightness(90%);
+}
+
+.footer .social-1-link-block:hover .social-link-circle,
+.footer-socials .social-1-link-block:hover .social-link-circle {
+  background-color: #dceff3;
+}
+
+/* Explicit foreground/background pairs prevent pale text on pale buttons. */
+.main-button,
+.cart-submit-button,
+.form-submit-button {
+  background-color: var(--clinic-teal);
+  border-color: var(--clinic-teal);
+  color: #fff;
+}
+
+.main-button:hover,
+.cart-submit-button:hover,
+.form-submit-button:hover {
+  background-color: var(--clinic-teal-hover);
+  border-color: var(--clinic-teal-hover);
+  color: #fff;
+  box-shadow: 0 8px 24px #163e6321;
+}
+
+.main-button.is-light,
+.main-button.is-transparent,
+.main-button.is-product-detail {
+  background-color: #f9fcfdf2;
+  border-color: var(--clinic-ink);
+  color: var(--clinic-ink);
+}
+
+.main-button.is-light:hover,
+.main-button.is-transparent:hover,
+.main-button.is-product-detail:hover {
+  background-color: #dceff3;
+  border-color: var(--clinic-ink);
+  color: var(--clinic-ink);
+}
+
+.button-text {
+  color: inherit;
+}
+
+.product-small-link {
+  background-color: var(--clinic-paper);
+  color: var(--clinic-ink);
+}
+
+.product-small-link:hover {
+  background-color: var(--clinic-mist);
+  color: var(--clinic-ink);
+}
+
+.breadcrumbs-main,
+.breadcrumbs-main.is-2nd,
+.breadcrumbs-main.is-2nd:hover {
+  background-color: #f9fcfdf2;
+}
+
+.breadcrumb-text-main.is-light,
+.breadcrumb-text-main.is-light:hover,
+.breadcrumb-text-main.is-light.w--current {
+  color: var(--clinic-ink);
+  border-bottom-color: var(--clinic-line);
+}
+
+.breadcrumb-icon-main {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(20%) saturate(1700%) hue-rotate(166deg) brightness(90%);
+}
+
+.main-button .button-icon {
+  filter: brightness(0) invert(1);
+}
+
+.main-button:is(.is-light, .is-transparent, .is-product-detail) .button-icon {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(20%) saturate(1700%) hue-rotate(166deg) brightness(90%);
+}
+
+.form-submit-button {
+  background-image: url('/assets/clinic-arrow-white.svg');
+}
+
+.form-submit-button:hover {
+  background-image: url('/assets/clinic-arrow-white.svg');
+}
+
+/* The alternative shop renders item colours inline; keep its light cart legible. */
+.cart-custom-list :is(div, span, button) {
+  color: var(--clinic-ink) !important;
+}
+
+.cart-custom-list .cart-order-product + div,
+.cart-custom-list .cart-remove-btn {
+  color: var(--clinic-teal-hover) !important;
+}
+
+:is(.main-hero, .header-4, .header-image-1, .header-6, .header-slider-2) .circle-button-border-1 {
+  background-color: #f9fcfdc7;
+  border-color: #537c94;
+}
+
+:is(.main-hero, .header-4, .header-image-1, .header-6, .header-slider-2) .circle-button-icon-1 {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(20%) saturate(1700%) hue-rotate(166deg) brightness(90%);
+}
+
+:is(.main-hero, .header-4, .header-image-1, .header-6, .header-slider-2) .circle-button-text-1 {
+  color: var(--clinic-ink);
+}
+
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #409bb1;
+  outline-offset: 4px;
+}

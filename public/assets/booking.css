@@ -1,0 +1,480 @@
+/* Booking prompts extend the existing clinic palette and button system. */
+:root {
+  --hf-promo-height: 36px;
+}
+
+html.hf-promo-dismissed {
+  --hf-promo-height: 0px;
+}
+
+.hf-promo-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 48px;
+  background: var(--clinic-teal);
+  color: #fff;
+  font-family: 'Clash Display Variable', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .17em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+html.hf-promo-dismissed .hf-promo-bar {
+  display: none;
+}
+
+.hf-promo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .25em .6em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hf-promo-link-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .6em;
+}
+
+.hf-promo-link-label > span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hf-promo-close,
+.hf-offer-close {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hf-promo-close {
+  position: absolute;
+  inset: 0 8px 0 auto;
+  width: 36px;
+}
+
+.hf-promo-close svg,
+.hf-offer-close svg {
+  width: 18px;
+  height: 18px;
+  transition: transform .25s ease;
+}
+
+.hf-promo-close:hover svg,
+.hf-offer-close:hover svg {
+  transform: rotate(90deg);
+}
+
+/* Keep the original fixed menu and booking buttons below the announcement. */
+.navbar,
+.navbar-simple,
+.menu-button,
+.nav-cta-button,
+.nav-fixed-button {
+  top: var(--hf-promo-height);
+}
+
+.breadcrumbs-main {
+  top: calc(4em + var(--hf-promo-height));
+}
+
+.fullscreen-menu {
+  z-index: 1001;
+}
+
+#booking {
+  scroll-margin-top: calc(4em + var(--hf-promo-height) + 1.5em);
+}
+
+.hf-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 100%;
+}
+
+.hf-cta {
+  gap: 1em;
+  padding-left: 1.7em;
+  padding-right: 1.7em;
+  text-decoration: none;
+}
+
+.hf-cta:hover {
+  letter-spacing: .15em;
+}
+
+.hf-cta-arrow {
+  flex: none;
+  width: 1.3em;
+  height: 1.3em;
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+
+.hf-cta:is(:hover, :focus-visible) .hf-cta-arrow,
+.hf-promo-link:is(:hover, :focus-visible) .hf-cta-arrow {
+  transform: translateX(4px);
+}
+
+.hf-home-hero .main-hero-layout {
+  padding-top: clamp(8em, 16vh, 12em);
+}
+
+.hf-home-hero .main-hero-content {
+  min-height: 0;
+  margin-bottom: 0;
+  gap: clamp(1.4em, 2.5vh, 2em);
+}
+
+.hf-home-hero .hf-hero-actions {
+  animation: hf-cta-reveal .8s .25s both;
+}
+
+.hf-booking-section {
+  background: var(--clinic-mist);
+  color: var(--clinic-ink);
+  border-top: 1px solid var(--clinic-line);
+}
+
+.hf-booking-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+  padding: 5em 0;
+}
+
+.hf-booking-copy {
+  max-width: 40em;
+}
+
+.hf-booking-copy .uppercase-title-dark {
+  margin-bottom: 1.3em;
+  text-align: left;
+}
+
+.hf-booking-copy .heading {
+  color: var(--clinic-ink);
+}
+
+.hf-booking-copy > p:last-child {
+  max-width: 38em;
+  margin: 1.5em 0 0;
+  color: #3d5c70;
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+.hf-booking-actions {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.hf-offer-text-link {
+  color: var(--clinic-teal-hover);
+  font-size: .95em;
+  line-height: 1.6;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* The native dialog supplies focus containment and makes the page behind it inert. */
+.hf-offer-dialog {
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  border: 1px solid var(--clinic-line);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--clinic-ink);
+  box-shadow: 0 24px 90px #102c3e3d;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overscroll-behavior: contain;
+}
+
+.hf-offer-dialog[open] {
+  animation: hf-dialog-reveal .3s ease-out;
+}
+
+.hf-offer-dialog::backdrop {
+  background: #163e6373;
+  backdrop-filter: blur(3px);
+}
+
+body.hf-offer-is-open {
+  overflow: hidden;
+}
+
+.hf-offer-header {
+  position: relative;
+  padding: 30px 52px 26px;
+  background: var(--clinic-teal);
+  color: #fff;
+  text-align: center;
+}
+
+.hf-offer-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ffffffa6;
+  border-radius: 3px;
+}
+
+.hf-offer-eyebrow,
+.hf-offer-subtitle {
+  margin: 0;
+  font-family: 'Clash Display Variable', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.hf-offer-title {
+  margin: 4px 0;
+  color: inherit;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(48px, 9vw, 64px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+
+.hf-offer-title:focus {
+  outline: none;
+}
+
+.hf-offer-body {
+  padding: 26px 30px 22px;
+}
+
+.hf-offer-intro {
+  margin: 0 0 22px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.hf-offer-form {
+  display: grid;
+  gap: 18px;
+}
+
+.hf-offer-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hf-offer-field label {
+  margin: 0;
+  color: var(--clinic-teal-hover);
+  font-family: 'Clash Display Variable', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.hf-offer-field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid #9bbac8;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--clinic-ink);
+  font: inherit;
+  line-height: 1.5;
+}
+
+.hf-offer-field input::placeholder {
+  color: #49697c;
+  opacity: 1;
+}
+
+.hf-offer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.hf-offer-submit {
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  padding: 14px 18px;
+  font-family: 'Clash Display Variable', sans-serif;
+  font-size: 14px;
+  letter-spacing: .08em;
+}
+
+.hf-offer-submit:hover {
+  letter-spacing: .08em;
+}
+
+.hf-offer-submit .button-text {
+  font-size: 1em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.hf-offer-note,
+.hf-offer-privacy {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hf-offer-privacy {
+  margin-top: 8px;
+  color: #49697c;
+}
+
+.hf-offer-decline {
+  display: block;
+  min-height: 44px;
+  margin: 6px auto -6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 0;
+  color: #49697c;
+  font: inherit;
+  cursor: pointer;
+}
+
+.hf-offer-decline:hover {
+  color: var(--clinic-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hf-enquiry-context {
+  margin: 0 0 1.5em;
+  padding: 1.2em;
+  border-left: 3px solid var(--clinic-teal);
+  background: var(--clinic-mist);
+  color: var(--clinic-ink);
+  font-size: 1em;
+  line-height: 1.7;
+}
+
+.hf-enquiry-context strong {
+  display: block;
+  margin-bottom: .3em;
+}
+
+@keyframes hf-cta-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hf-dialog-reveal {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 767px) {
+  .hf-promo-bar {
+    padding: 8px 42px;
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .hf-booking-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5em;
+    padding: 4em 0;
+    text-align: center;
+  }
+
+  .hf-booking-copy {
+    margin: auto;
+  }
+
+  .hf-booking-copy .uppercase-title-dark {
+    text-align: center;
+  }
+
+  .hf-booking-actions .main-button {
+    min-width: 22em;
+  }
+
+  .hf-hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hf-hero-actions .main-button {
+    width: min(100%, 320px);
+    min-width: 0;
+    min-height: 48px;
+  }
+
+  .hf-offer-body {
+    padding: 22px;
+  }
+
+  .hf-offer-field input {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 800px) {
+  .hf-home-hero .main-hero-layout { padding-top: 7em; }
+  .hf-home-hero .main-hero-content { gap: 1.2em; }
+  .hf-home-hero .main-circle-button { width: 6em; height: 6em; }
+}
+
+@media (max-width: 479px) {
+  :root { --hf-promo-height: 46px; }
+  html.hf-promo-dismissed { --hf-promo-height: 0px; }
+  .hf-promo-link { gap: 0; }
+  .hf-offer-header { padding: 25px 42px 22px; }
+  .hf-offer-row { grid-template-columns: 1fr; gap: 16px; }
+  .hf-offer-dialog { max-height: calc(100dvh - 24px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hf-home-hero .hf-hero-actions,
+  .hf-offer-dialog[open] { animation: none; }
+  .hf-cta,
+  .hf-cta-arrow,
+  .hf-promo-close svg,
+  .hf-offer-close svg { transition: none; }
+  .hf-cta:is(:hover, :focus-visible) .hf-cta-arrow,
+  .hf-promo-link:is(:hover, :focus-visible) .hf-cta-arrow { transform: none; }
+}
