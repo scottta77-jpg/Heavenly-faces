@@ -1,0 +1,338 @@
+{
+  "origin": "User-provided Heavenly Faces GALLERY folder",
+  "processing": "Responsive resizing and WebP compression only; no retouching or generated changes.",
+  "assets": {
+    "gentle-peel-treatment": {
+      "sourceFileName": "Gentle Peel Treatment .png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/Gentle Peel Treatment .png",
+      "sourceSha256": "7a480b6d4033cdd945223738945fbfa7ee0a7e6a02ceb84c8635ca6f766e0f95",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Gentle peel treatment",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/gentle-peel-treatment-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/gentle-peel-treatment-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/gentle-peel-treatment-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/gentle-peel-treatment-1536x1024.webp"
+        }
+      ]
+    },
+    "hydrating-facial": {
+      "sourceFileName": "Hydrating facial.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/Hydrating facial.png",
+      "sourceSha256": "fd8e3babe48803a6b0fffe530f403c9d3e11ad842a6da6b84d46dd64208a1762",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Hydrating facial",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/hydrating-facial-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/hydrating-facial-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/hydrating-facial-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/hydrating-facial-1536x1024.webp"
+        }
+      ]
+    },
+    "microneedling-pen": {
+      "sourceFileName": "Microneedling pen.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/Microneedling pen.png",
+      "sourceSha256": "c72b6e859c127c44881f63dbfbe4811d871482d803d4254f4a6aaab58732acb9",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Microneedling pen preparation",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/microneedling-pen-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/microneedling-pen-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/microneedling-pen-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/microneedling-pen-1536x1024.webp"
+        }
+      ]
+    },
+    "eyebrow-treatment": {
+      "sourceFileName": "eyebrow treatment in a beauty clinic.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/eyebrow treatment in a beauty clinic.png",
+      "sourceSha256": "b8beaafcdfcff3ec3dde9f1bf4633d6d191b663e82ddb17e43690c871a4161f1",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Eyebrow treatment in a beauty clinic",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/eyebrow-treatment-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/eyebrow-treatment-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/eyebrow-treatment-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/eyebrow-treatment-1536x1024.webp"
+        }
+      ]
+    },
+    "facial-treatment-close-up": {
+      "sourceFileName": "facial treatment close-up.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/facial treatment close-up.png",
+      "sourceSha256": "eb353b77fed676210394f25b065e877df0e77675778a4fbf75415250658accbe",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Facial treatment close-up",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/facial-treatment-close-up-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/facial-treatment-close-up-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/facial-treatment-close-up-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/facial-treatment-close-up-1536x1024.webp"
+        }
+      ]
+    },
+    "facial-treatment-with-fan-brush": {
+      "sourceFileName": "facial treatment with fan brush.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/facial treatment with fan brush.png",
+      "sourceSha256": "1f56346256b36ad1bbb63815a3d84f5e6aeddcf384e7723276c55ef0710bbd7d",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Facial treatment with a fan brush",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-1536x1024.webp"
+        }
+      ]
+    },
+    "lip-filler": {
+      "sourceFileName": "lip filler.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/lip filler.png",
+      "sourceSha256": "dd3bcc3c413ac8df5d4d66fb3236aadf2d661ff713519aae8eb915867418b63e",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Lip filler treatment",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/lip-filler-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/lip-filler-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/lip-filler-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/lip-filler-1536x1024.webp"
+        }
+      ]
+    },
+    "microneedling": {
+      "sourceFileName": "microneedling.png",
+      "source": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/microneedling.png",
+      "sourceSha256": "58962f0768a613f2f8b004201fb8e9e17087141ea476c4e684bb189d11a96c25",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Microneedling treatment",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/gallery/microneedling-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/gallery/microneedling-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/gallery/microneedling-1080x720.webp"
+        },
+        {
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/microneedling-1536x1024.webp"
+        }
+      ]
+    }
+  },
+  "placements": [
+    {
+      "file": "service-manicures-and-pedicures.html",
+      "photo": "microneedling",
+      "placement": "matching treatment or skincare section"
+    },
+    {
+      "file": "index.html",
+      "photo": "hydrating-facial",
+      "placement": "matching treatment or skincare section"
+    },
+    {
+      "file": "about.html",
+      "photo": "facial-treatment-with-fan-brush",
+      "placement": "Services gallery preview"
+    },
+    {
+      "file": "service-dermal-fillers.html",
+      "photo": "lip-filler",
+      "placement": "matching treatment or skincare section"
+    },
+    {
+      "file": "about-1.html",
+      "photo": "facial-treatment-with-fan-brush",
+      "placement": "Services gallery preview"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "lip-filler",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "gentle-peel-treatment",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "microneedling",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "hydrating-facial",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "facial-treatment-close-up",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "microneedling-pen",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "facial-treatment-with-fan-brush",
+      "placement": "gallery"
+    },
+    {
+      "file": "gallery.html",
+      "photo": "eyebrow-treatment",
+      "placement": "gallery"
+    },
+    {
+      "file": "service-hair-styling.html",
+      "photo": "gentle-peel-treatment",
+      "placement": "matching treatment or skincare section"
+    },
+    {
+      "file": "categories-1.html",
+      "photo": "facial-treatment-with-fan-brush",
+      "placement": "Services gallery preview"
+    },
+    {
+      "file": "treatments.html",
+      "photo": "lip-filler",
+      "placement": "Lip fillers treatment panel"
+    },
+    {
+      "file": "treatments.html",
+      "photo": "facial-treatment-with-fan-brush",
+      "placement": "Services gallery preview"
+    },
+    {
+      "file": "categories.html",
+      "photo": "facial-treatment-with-fan-brush",
+      "placement": "Services gallery preview"
+    }
+  ]
+}

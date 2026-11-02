@@ -1,5 +1,5 @@
 {
-  "generatedWith": "User-provided product image; OpenAI built-in image_gen for cleansing and reused service imagery",
+  "generatedWith": "User-provided Obagi and clinical service images; OpenAI built-in image_gen for the existing cleansing image",
   "purpose": "Gallery imagery using the supplied Obagi product photograph. Generated service and cleansing photos are illustrative and do not depict actual clinic staff, patients, or treatment results.",
   "lipFillerImage": "/assets/clinic-services/dermal-fillers-1920x1280.webp",
   "assets": {
@@ -36,32 +36,30 @@
     },
     "Services": {
       "key": "Services",
-      "stem": "clinical-services",
-      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-abf529fb-872f-4266-a7f6-07955300af33.png",
-      "reusedFrom": "docs/clinic-service-image-prompts.json#chemical-peels",
-      "width": 1920,
-      "height": 2836,
-      "alt": "A clinician applying a chemical peel solution",
+      "providedSource": "/Users/boyka777/Documents/AI AGENCY/FREE CLIENTS/Heavenly Faces/GALLERY/facial treatment with fan brush.png",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Facial treatment with a fan brush",
       "exports": [
         {
           "width": 500,
-          "height": 739,
-          "path": "/assets/clinic-gallery/clinical-services-500x739.webp"
+          "height": 333,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-500x333.webp"
         },
         {
           "width": 800,
-          "height": 1182,
-          "path": "/assets/clinic-gallery/clinical-services-800x1182.webp"
+          "height": 533,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-800x533.webp"
         },
         {
           "width": 1080,
-          "height": 1595,
-          "path": "/assets/clinic-gallery/clinical-services-1080x1595.webp"
+          "height": 720,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-1080x720.webp"
         },
         {
-          "width": 1920,
-          "height": 2836,
-          "path": "/assets/clinic-gallery/clinical-services-1920x2836.webp"
+          "width": 1536,
+          "height": 1024,
+          "path": "/assets/gallery/facial-treatment-with-fan-brush-1536x1024.webp"
         }
       ]
     },
@@ -104,8 +102,8 @@
       "/assets/63aba4e541b0ca597be8b931_pexels-ron-lach-8131568.avif"
     ],
     "Services": [
-      "/assets/clinic-gallery/clinical-services-1920x2836.webp",
-      "/assets/clinic-services/microneedling-1920x1280.webp"
+      "/assets/gallery/facial-treatment-with-fan-brush-1536x1024.webp",
+      "/assets/gallery/microneedling-1536x1024.webp"
     ],
     "Cleansing": [
       "/assets/clinic-gallery/gentle-cleansing-1920x1839.webp",
