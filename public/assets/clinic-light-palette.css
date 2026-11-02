@@ -1,0 +1,753 @@
+/* ==========================================================================
+   HEAVENLY FACES - CLINIC LIGHT PALETTE OVERHAUL
+   Strictly maintains all Webflow layouts, dimensions, animations, and physics.
+   Changes ONLY color, background, borders, and contrast.
+   ========================================================================== */
+
+:root {
+  --main-background: #ffffff;
+  --purple-black: #ffffff;
+  --black: #ffffff;
+  --midnight-blue: #f0fafa;
+  --midnight-purple: #344775;
+  --thistle: #344775;
+  --dark-slate-blue: #087f8c;
+  --light-blue: #d8ebf0;
+  --pale-violet-red: #50366e;
+  --medium-violet-red: #087f8c;
+  --dark-slate-grey: #284c55;
+}
+
+/* ==========================================================================
+   PAGE CANVAS & GLOBAL FOUNDATIONS
+   ========================================================================== */
+body,
+.page-wrapper,
+.page-wrapper.is-dark {
+  background-color: #ffffff !important;
+  color: #4e6284 !important;
+}
+
+/* Sections: default to pale clinic aqua for soft rhythm against white cards */
+.section.with-purple-black-bg,
+.with-purple-black-bg,
+.section.visible-overflow-dark-bg,
+.section.sticky-content-sec.is-dark,
+.section.is-overview-section-2 {
+  background-color: #f0fafa !important;
+  color: #4e6284 !important;
+}
+
+.section.sticky-content-sec {
+  background-color: #ffffff !important;
+}
+
+.section.with-purple-black-bg.with-border-bottom {
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.section.with-purple-black-bg.with-borders {
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY CONTRAST (DEEP CLINIC BLUE HEADINGS & SLATE BODY)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.heading,
+.heading.is-header-4-title-1,
+.heading.is-small-title,
+.heading.is-extra-small-title,
+.heading.is-large-uppercase-title-1,
+.heading.is-title-15,
+.heading.is-content-grid-1-title,
+.heading.is-content-3-title,
+.heading.is-header-image-1-title-1,
+.heading.is-overview-title,
+.heading.slider-title-1,
+.listing-heading-uni-1,
+.listing-heading-uni-2,
+.uppercase-title-dark,
+.uppercase-title-light,
+.content-section-1-title {
+  color: #344775 !important;
+}
+
+p,
+.content-grid-9-text-1,
+.content-grid-3-text-1,
+.content-grid-3-text-1.is-dark,
+.listing-text,
+.listing-text-1,
+.listing-text-2,
+.header-5-text,
+.about-text,
+.list-text,
+.accordion-text,
+.event-text-1,
+.grid-6-text-2 {
+  color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   MAIN HERO (LUMINOUS & NATURAL CLINIC WASH)
+   ========================================================================== */
+.main-hero {
+  background-color: #ffffff !important;
+  color: #344775 !important;
+}
+
+/* Remove dark purple multiply overlay so portrait is bright and radiant */
+.main-hero-overlay {
+  background: none !important;
+  opacity: 0 !important;
+}
+
+/* Animations background bloom: soft pale aqua instead of dark indigo */
+.animation-color-bg.is-purple-dark,
+.animation-color-bg.is-midnight-purple {
+  background-color: #d8ebf0 !important;
+}
+
+.animation-color-bg.is-green-light {
+  background-color: #e5f5f5 !important;
+}
+
+/* Circle Button ("Discover ↓" - preserves Webflow magnetic physics) */
+.main-circle-button .circle-button-text-1,
+.circle-button-content .circle-button-text-1,
+.circle-button-text-1.is-dark {
+  color: #344775 !important;
+}
+
+.circle-button-border-1,
+.circle-button-border-1.is-dark {
+  border-color: rgba(52, 71, 117, 0.25) !important;
+}
+
+/* ==========================================================================
+   MAIN NAVBAR (PRESERVE EXACT WEBFLOW 4EM HEIGHT & CORNER BUTTONS)
+   ========================================================================== */
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.navbar .brand-name {
+  color: #344775 !important;
+}
+
+.navbar .menu-link-title {
+  color: #344775 !important;
+}
+
+.navbar .menu-button,
+.navbar .nav-cta-button {
+  background-color: #d8ebf0 !important;
+  color: #344775 !important;
+}
+
+.navbar .menu-button .menu-link-title,
+.navbar .nav-cta-button .menu-link-title {
+  color: #344775 !important;
+}
+
+.navbar .dropdown-toggle .dropdown-icon {
+  color: #344775 !important;
+}
+
+.dropdown-list {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(8, 127, 140, 0.12) !important;
+  box-shadow: 0 12px 32px rgba(52, 71, 117, 0.08) !important;
+}
+
+.dropdown-list .menu-link-name {
+  color: #344775 !important;
+}
+
+.dropdown-list .menu-link:hover .menu-link-name {
+  color: #087f8c !important;
+}
+
+/* ==========================================================================
+   NUMBERED STEPS & ACCENT BLOBS (SECTION 1)
+   ========================================================================== */
+.elipse.with-animation .elipse-number,
+.elipse-number.is-dark {
+  color: #344775 !important;
+  background-color: #d8ebf0 !important;
+  border-radius: 50% !important;
+}
+
+.elipse.is-2nd,
+.elipse.is-3rd {
+  background-color: rgba(216, 235, 240, 0.5) !important;
+}
+
+.elipse-bg,
+.elipse-bg.is-2nd,
+.elipse-bg.is-3rd,
+.elipse-bg.is-pink {
+  background-color: rgba(216, 235, 240, 0.35) !important;
+}
+
+/* ==========================================================================
+   EXPLORE TREATMENTS LISTING (.listing-2-item)
+   ========================================================================== */
+.listing-2-item {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(8, 127, 140, 0.14) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.04) !important;
+}
+
+.listing-2-item:hover {
+  border-color: rgba(8, 127, 140, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(8, 127, 140, 0.12) !important;
+}
+
+.listing-gradient-color {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 40%, rgba(255, 255, 255, 0.25) 70%, transparent 100%) !important;
+  mix-blend-mode: normal !important;
+}
+
+.listing-2-content-2 {
+  z-index: 20 !important;
+}
+
+.listing-2-content-2 .listing-heading-uni-1 {
+  color: #344775 !important;
+}
+
+.listing-2-content-2 .listing-text {
+  color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   SERVICES STACK LISTING (.listing-8 on /services)
+   ========================================================================== */
+.listing-8-item,
+.listing-8-item.with-dark-bg {
+  background-color: #ffffff !important;
+  color: #4e6284 !important;
+}
+
+.listing-8-item:nth-child(2n) {
+  background-color: #f0fafa !important;
+  color: #4e6284 !important;
+}
+
+.listing-8-box {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(8, 127, 140, 0.16) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(52, 71, 117, 0.08) !important;
+  color: #344775 !important;
+}
+
+.listing-8-column-1 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(8, 127, 140, 0.14) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.listing-8-subtitle {
+  color: #087f8c !important;
+  font-weight: 600 !important;
+}
+
+.listing-8-text {
+  color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   HOMEPAGE PRODUCT GRID (.listing-3 & .services-3-item)
+   ========================================================================== */
+.listing-3.with-dark-bg {
+  background-color: #f0fafa !important;
+}
+
+.services-3-item {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(8, 127, 140, 0.14) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.04) !important;
+}
+
+.services-3-item .listing-heading-uni-1 {
+  color: #344775 !important;
+}
+
+.services-3-item .listing-text {
+  color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   INTERACTIVE BUTTONS (.main-button)
+   ========================================================================== */
+.main-button {
+  background-color: #d8ebf0 !important;
+  color: #344775 !important;
+  border: 1px solid rgba(8, 127, 140, 0.2) !important;
+}
+
+.main-button:hover {
+  background-color: #087f8c !important;
+  color: #ffffff !important;
+  border-color: #087f8c !important;
+}
+
+.main-button.is-transparent {
+  background-color: rgba(216, 235, 240, 0.5) !important;
+  color: #344775 !important;
+  border: 1px solid rgba(8, 127, 140, 0.25) !important;
+}
+
+.main-button.is-transparent:hover {
+  background-color: #087f8c !important;
+  color: #ffffff !important;
+  border-color: #087f8c !important;
+}
+
+.main-button.is-light {
+  background-color: #ffffff !important;
+  color: #344775 !important;
+  border: 1px solid rgba(8, 127, 140, 0.25) !important;
+}
+
+.main-button.is-light:hover {
+  background-color: #087f8c !important;
+  color: #ffffff !important;
+  border-color: #087f8c !important;
+}
+
+/* ==========================================================================
+   LEFTHAND SLIDE-OUT MENU (.fullscreen-menu) - HIGH CONTRAST WCAG AAA
+   ========================================================================== */
+.fullscreen-menu {
+  background-color: #ffffff !important;
+}
+
+.fullscreen-menu-bg {
+  background-color: #ffffff !important;
+  opacity: 0.98 !important;
+}
+
+.fullscreen-inner {
+  background-color: #ffffff !important;
+}
+
+.fullscreen-menu-column-1 {
+  background-color: #ffffff !important;
+  border-right: 1px solid rgba(8, 127, 140, 0.15) !important;
+}
+
+.fullscreen-menu-link {
+  color: #1a2849 !important;
+  text-decoration: none !important;
+}
+
+.fullscreen-menu-link:hover {
+  color: #087f8c !important;
+  padding-left: 8px !important;
+}
+
+.fullscreen-menu-link.w--current {
+  color: #087f8c !important;
+  font-weight: 600 !important;
+}
+
+.close-button {
+  background-color: #f0fafa !important;
+  border: 1px solid rgba(8, 127, 140, 0.2) !important;
+}
+
+.close-button .close-button-bg {
+  filter: invert(1) !important;
+}
+
+.menu-image-color {
+  background-color: rgba(216, 235, 240, 0.2) !important;
+}
+
+/* ==========================================================================
+   PRODUCT CARDS WITH PHOTO BACKDROPS (PREVENT WHITE-ON-WHITE)
+   ========================================================================== */
+.product-size {
+  color: #ffffff !important;
+}
+
+.heading.is-product-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55) !important;
+}
+
+.product-description-1 {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.product-price {
+  color: #ffffff !important;
+  background-color: rgba(8, 127, 140, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 4px !important;
+  padding: 4px 10px !important;
+}
+
+.product-small-link {
+  color: #d8ebf0 !important;
+}
+
+.product-small-link:hover {
+  color: #ffffff !important;
+}
+
+.product-background-color {
+  background-image: linear-gradient(to bottom, rgba(10, 3, 24, 0.35) 20%, rgba(17, 12, 35, 0.85) 75%, #15112a) !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   PRODUCT DETAIL HEADER (.header-3, .header-4, .header-5)
+   ========================================================================== */
+.header-3,
+.header-4,
+.header-4.is-dark,
+.header-5,
+.header-5-box,
+.header-5-box.is-dark {
+  background-color: #ffffff !important;
+  color: #344775 !important;
+}
+
+.header-3 .heading.is-large-title {
+  color: #344775 !important;
+}
+
+.header-3-subtitle-4 {
+  color: #4e6284 !important;
+}
+
+.product-text {
+  color: #087f8c !important;
+}
+
+.price-text-1,
+.price-text-2,
+.price-now-text {
+  color: #344775 !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   SUBPAGE HEADERS & NATURAL LUMINOUS WASH (.header-image-1, .header-4, .header-6)
+   ========================================================================== */
+.header-image-1 {
+  background-color: #ffffff !important;
+}
+
+.bg-overlay-color,
+.header-slider-gradient-2,
+.header-slider-2-gradient-1,
+.header-slider-1-bg,
+.header-4-bg-2,
+.header-bg-bottom-2,
+.header-6-gradient-bottom,
+.header-6-bg-color,
+.overlay-color-1,
+.listing-4-overlay-color,
+.listing-7-overlay-color,
+.listing-3-background-color,
+.sticky-column-2-bg,
+.bg-color-for-sticky-sec-1,
+.gallery-background,
+.div-block-7 {
+  background: none !important;
+  opacity: 0 !important;
+}
+
+.header-image-1-gradient-color,
+.header-image-1-gradient {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 60%, #ffffff 100%) !important;
+  opacity: 1 !important;
+}
+
+.heading.is-header-image-1-title-1,
+.heading.is-header-image-1-title-1.is-2nd,
+.heading.is-header-video-1-title-1.is-2nd,
+.heading.is-large-uppercase-title-1,
+.heading.is-title-15,
+.heading.is-header-slider-3,
+.heading.is-header-slider-2-title-2,
+.header-image-1-title .heading {
+  color: #344775 !important;
+}
+
+.header-1-content-1 .uppercase-title-light {
+  color: #087f8c !important;
+}
+
+/* ==========================================================================
+   TESTIMONIALS / APPROACH (.review-cms-item)
+   ========================================================================== */
+.review-cms-item {
+  position: relative !important;
+  border: 1px solid rgba(8, 127, 140, 0.18) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.06) !important;
+}
+
+.review-cms-item .review-cms-guest-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 1 !important;
+}
+
+.review-cms-item::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(14, 25, 48, 0.55) 0%, rgba(14, 25, 48, 0.90) 100%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.review-cms-text {
+  position: relative !important;
+  z-index: 3 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.review-cms-guest-name {
+  position: relative !important;
+  z-index: 3 !important;
+  color: #00d2d3 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   FOOTER & SUBFOOTER
+   ========================================================================== */
+.footer-wrap,
+.footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.footer-link-large,
+.footer-brand-link-block {
+  color: #344775 !important;
+}
+
+.footer-link-large:hover {
+  color: #087f8c !important;
+}
+
+.footer-socials-2 .social-icon {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(21%) saturate(1637%) hue-rotate(185deg) brightness(92%) contrast(89%) !important;
+}
+
+.footer-open-menu-link {
+  background-color: #d8ebf0 !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.16) !important;
+}
+
+.footer-open-menu-link-text {
+  color: #344775 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+.footer-open-menu-link-icon {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(85%) saturate(1476%) hue-rotate(155deg) brightness(94%) contrast(92%) !important;
+}
+
+.subfooter-1-black {
+  background-color: #f0fafa !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.subfooter-1-black .footer-link.is-2nd {
+  color: #4e6284 !important;
+}
+
+.subfooter-dot {
+  background-color: #4e6284 !important;
+}
+
+/* ==========================================================================
+   FORMS & INPUTS (CONTACT / ABOUT / BOOKING)
+   ========================================================================== */
+.form-field {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid rgba(8, 127, 140, 0.25) !important;
+  color: #344775 !important;
+}
+
+.form-field:focus {
+  border-bottom-color: #087f8c !important;
+}
+
+.form-field::placeholder {
+  color: #758696 !important;
+}
+
+.form.on-dark-bg {
+  color: #344775 !important;
+}
+
+.checkbox.on-dark-bg {
+  border-color: rgba(8, 127, 140, 0.4) !important;
+}
+
+.checkbox-label {
+  color: #344775 !important;
+}
+
+/* ==========================================================================
+   BREADCRUMBS & RICH TEXT
+   ========================================================================== */
+.breadcrumbs-main {
+  background-color: #f0fafa !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.breadcrumb-text-main,
+.breadcrumb-text-1 {
+  color: #344775 !important;
+}
+
+.breadcrumb-text-main:hover,
+.breadcrumb-text-1:hover {
+  color: #087f8c !important;
+}
+
+.rich-text-on-dark-bg {
+  color: #4e6284 !important;
+}
+
+.rich-text-on-dark-bg h1,
+.rich-text-on-dark-bg h2,
+.rich-text-on-dark-bg h3,
+.rich-text-on-dark-bg h4 {
+  color: #344775 !important;
+}
+
+.rich-text-on-dark-bg a {
+  color: #087f8c !important;
+}
+
+/* ==========================================================================
+   CARDS & LISTINGS (BLOG, CATEGORIES, GALLERY)
+   ========================================================================== */
+.blog-item,
+.listing-1-item,
+.service-item,
+.treatment-item {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(8, 127, 140, 0.14) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(52, 71, 117, 0.04) !important;
+}
+
+.blog-name,
+.listing-1-name,
+.service-name,
+.treatment-name {
+  color: #344775 !important;
+}
+
+.blog-category-text-1,
+.blog-category-text-2 {
+  color: #50366e !important;
+  font-weight: 600 !important;
+}
+
+.gallery-text {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   SUBPAGE CTA BANNERS (.cta-1-container) & ACCORDIONS
+   ========================================================================== */
+.cta-1-container {
+  background-color: #f0fafa !important;
+  border: 1px solid rgba(8, 127, 140, 0.16) !important;
+  border-radius: 12px !important;
+}
+
+.cta-1-title {
+  color: #344775 !important;
+}
+
+.cta-1-text {
+  color: #4e6284 !important;
+}
+
+.cta-1-overlay-color {
+  background: linear-gradient(180deg, rgba(240, 250, 250, 0.85) 0%, rgba(240, 250, 250, 0.95) 100%) !important;
+}
+
+.accordion-toggle {
+  background-color: #ffffff !important;
+  border-top: 1px solid rgba(8, 127, 140, 0.12) !important;
+  border-bottom: 1px solid rgba(8, 127, 140, 0.12) !important;
+}
+
+.accordion-title {
+  color: #344775 !important;
+}
+
+.accordion-content {
+  background-color: #f0fafa !important;
+}
+
+/* ==========================================================================
+   CART MODAL & ECOMMERCE STATES
+   ========================================================================== */
+.cart-container,
+.cart-header,
+.w-commerce-commercecartcontainer {
+  background-color: #ffffff !important;
+  color: #344775 !important;
+}
+
+.cart-header {
+  border-bottom: 1px solid rgba(8, 127, 140, 0.15) !important;
+}
+
+.your-cart-text,
+.cart-order-summary {
+  color: #344775 !important;
+}
+
+.cart-order-summary.is-price {
+  color: #087f8c !important;
+  font-weight: 600 !important;
+}
+
+.empty-state-default {
+  background-color: #f0fafa !important;
+  color: #4e6284 !important;
+  border: 1px solid rgba(8, 127, 140, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+.empty-state-text {
+  color: #344775 !important;
+}
+
