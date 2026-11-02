@@ -1,5 +1,5 @@
-/* Heavenly Faces clinic palette.
-   Colour-only overrides: retain the original layout, imagery and interactions. */
+/* Heavenly Faces clinic palette and responsive wordmark.
+   Retain the original imagery and interactions. */
 :root {
   --clinic-paper: #f9fcfd;
   --clinic-mist: #eaf5f7;
@@ -61,6 +61,34 @@ body,
 .nav-2-link:hover,
 .dropdown-toggle:hover {
   color: var(--clinic-teal-hover);
+}
+
+/* Every header uses the homepage wordmark's spacing and hover animation,
+   including when Webflow marks the home link as the current page. */
+.navbar .brand-link-block {
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  transition: letter-spacing 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  white-space: nowrap;
+}
+
+.navbar .brand-link-block:hover {
+  letter-spacing: 0.6em;
+  text-indent: 0.6em;
+}
+
+@media (max-width: 479px) {
+  .navbar .nav-block-2 {
+    min-width: 0;
+    max-width: calc(100% - 18em);
+  }
+
+  .navbar .brand-link-block {
+    min-width: 0;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+  }
 }
 
 .menu-button,

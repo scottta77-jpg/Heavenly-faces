@@ -1,0 +1,115 @@
+{
+  "generatedWith": "User-provided product image; OpenAI built-in image_gen for cleansing and reused service imagery",
+  "purpose": "Gallery imagery using the supplied Obagi product photograph. Generated service and cleansing photos are illustrative and do not depict actual clinic staff, patients, or treatment results.",
+  "lipFillerImage": "/assets/clinic-services/dermal-fillers-1920x1280.webp",
+  "assets": {
+    "Products": {
+      "key": "Products",
+      "stem": "obagi-nu-derm-fx-system",
+      "providedSource": "/Users/boyka777/Downloads/Obagi_Nu-Derm_Fx_System_Dry_PDPhero_1260x1260_NEW_2560x.webp",
+      "originalPath": "/assets/clinic-gallery/obagi-nu-derm-fx-system.webp",
+      "width": 1260,
+      "height": 840,
+      "alt": "Obagi Nu-Derm Fx skincare products and travel bag",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/clinic-gallery/obagi-nu-derm-fx-system-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/clinic-gallery/obagi-nu-derm-fx-system-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/clinic-gallery/obagi-nu-derm-fx-system-1080x720.webp"
+        },
+        {
+          "width": 1260,
+          "height": 840,
+          "path": "/assets/clinic-gallery/obagi-nu-derm-fx-system-1260x840.webp"
+        }
+      ]
+    },
+    "Services": {
+      "key": "Services",
+      "stem": "clinical-services",
+      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-abf529fb-872f-4266-a7f6-07955300af33.png",
+      "reusedFrom": "docs/clinic-service-image-prompts.json#chemical-peels",
+      "width": 1920,
+      "height": 2836,
+      "alt": "A clinician applying a chemical peel solution",
+      "exports": [
+        {
+          "width": 500,
+          "height": 739,
+          "path": "/assets/clinic-gallery/clinical-services-500x739.webp"
+        },
+        {
+          "width": 800,
+          "height": 1182,
+          "path": "/assets/clinic-gallery/clinical-services-800x1182.webp"
+        },
+        {
+          "width": 1080,
+          "height": 1595,
+          "path": "/assets/clinic-gallery/clinical-services-1080x1595.webp"
+        },
+        {
+          "width": 1920,
+          "height": 2836,
+          "path": "/assets/clinic-gallery/clinical-services-1920x2836.webp"
+        }
+      ]
+    },
+    "Cleansing": {
+      "key": "Cleansing",
+      "stem": "gentle-cleansing",
+      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-ac899f71-6207-4c6c-a3c6-c80822e903a7.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: gallery photograph for the Cleansing category of an aesthetic and skincare clinic website. Generate ONE landscape 3:2 photograph, approximately 1536 x 1024. A beautiful adult Black woman aged around 35, hair held back with a simple ivory fabric headband, gently cleansing her face with a small amount of soft white facial-cleansing foam on her cheeks. Her hands touch her cheeks naturally, eyes gently closed, calm expression, realistic skin texture, natural lips and brows with no visible makeup. She is at a clean white sink in a bright off-white and very pale aqua skincare-clinic washroom, wearing a modest ivory top. Soft flattering daylight, clean realistic editorial skincare photography, crisp detail and natural colour. Frame her complete head and upper shoulders in the centre with breathing room to the sides, keep her face and both hands clearly inside the central area so wide gallery crops still read well. No cosmetic applicators, concealer, lipstick, makeup brushes, nail polish, coloured masks, product branding, writing, watermark, collage or before-and-after.",
+      "width": 1920,
+      "height": 1839,
+      "alt": "Gentle facial cleansing with a foaming cleanser",
+      "exports": [
+        {
+          "width": 500,
+          "height": 479,
+          "path": "/assets/clinic-gallery/gentle-cleansing-500x479.webp"
+        },
+        {
+          "width": 800,
+          "height": 766,
+          "path": "/assets/clinic-gallery/gentle-cleansing-800x766.webp"
+        },
+        {
+          "width": 1080,
+          "height": 1034,
+          "path": "/assets/clinic-gallery/gentle-cleansing-1080x1034.webp"
+        },
+        {
+          "width": 1920,
+          "height": 1839,
+          "path": "/assets/clinic-gallery/gentle-cleansing-1920x1839.webp"
+        }
+      ]
+    }
+  },
+  "lightboxAlbums": {
+    "Products": [
+      "/assets/clinic-gallery/obagi-nu-derm-fx-system.webp",
+      "/assets/63a220ef95e3709b0534c9b6_pexels-ron-lach-8131580.webp",
+      "/assets/63aba4e541b0ca597be8b931_pexels-ron-lach-8131568.avif"
+    ],
+    "Services": [
+      "/assets/clinic-gallery/clinical-services-1920x2836.webp",
+      "/assets/clinic-services/microneedling-1920x1280.webp"
+    ],
+    "Cleansing": [
+      "/assets/clinic-gallery/gentle-cleansing-1920x1839.webp",
+      "/assets/63ab519d05d2aa567699d046_pexels-gustavo-fring-3985329.webp"
+    ]
+  }
+}

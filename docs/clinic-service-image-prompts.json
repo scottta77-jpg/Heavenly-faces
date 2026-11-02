@@ -1,0 +1,122 @@
+{
+  "generatedWith": "OpenAI built-in image_gen",
+  "purpose": "Illustrative aesthetic-clinic service photographs. These do not depict actual Heavenly Faces staff, patients, or treatment results.",
+  "assets": {
+    "dermal-fillers": {
+      "route": "/service/dermal-fillers",
+      "file": "service-dermal-fillers.html",
+      "alt": "Preparation for a dermal filler treatment",
+      "prompt": "Use case: photorealistic-natural. Asset type: illustrative editorial photograph for an aesthetic and skincare clinic's Dermal Fillers service card and opening page image. Generate ONE landscape photograph, 3:2 aspect ratio, approximately 1536 x 1024. A professional clinician in navy scrubs and clean pale blue nitrile gloves prepares a subtle lip filler treatment for a relaxed adult woman in her late thirties with natural skin texture and brown hair swept back. One gloved hand gently supports her chin, the other holds a small unbranded clinical syringe near the upper lip; show a preparation moment with no visible skin penetration. Her natural lips, cheek and jaw are clearly visible, her head slightly tilted back. No exaggerated lips, makeup application, bruising, blood, wounds, frightening imagery or before-and-after. Light airy premium clinic, off-white and pale aqua background softly out of focus, soft daylight, natural colours, realistic anatomy and normal hands. Head and shoulders framing, complete face centred within the central half of the width, enough distance from the camera and breathing room to retain the face and syringe in both a wide menu crop and a narrow portrait crop. Calm, reassuring, clinical and tasteful. No writing, labels, logo, watermark, collage, dropper bottles or cosmetics packaging.",
+      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-807c3683-10bc-4f0d-9ab5-a133004738dc.png",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/clinic-services/dermal-fillers-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/clinic-services/dermal-fillers-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/clinic-services/dermal-fillers-1080x720.webp"
+        },
+        {
+          "width": 1920,
+          "height": 1280,
+          "path": "/assets/clinic-services/dermal-fillers-1920x1280.webp"
+        }
+      ]
+    },
+    "skin-boosters": {
+      "route": "/service/skin-boosters",
+      "file": "service-makeup-application.html",
+      "alt": "Skin quality consultation for skin booster treatment",
+      "prompt": "Use case: photorealistic-natural. Asset type: illustrative editorial photograph for an aesthetic and skincare clinic's Skin Boosters service card and opening page image. Generate ONE landscape 3:2 photograph, approximately 1536 x 1024. A beautiful Black woman in her early forties with naturally hydrated luminous skin, subtle true pores and fine expression lines, sitting comfortably in a bright skincare clinic during a facial skin-quality consultation. A clinician in navy scrubs and clean pale blue nitrile gloves gently supports her cheek and jaw while examining her skin. She has a calm relaxed expression and a fresh face with no heavy makeup; simple ivory top and hair neatly tied back. Focus on skin quality, hydration, cheek and natural healthy glow. The clinician's face stays out of frame. Soft daylight, off-white and pale aqua background, realistic clean editorial photography. Frame her complete head and shoulders, centred within the central half of the width with breathing room around the face, so the same photo works in a wide menu card and narrow portrait crop. No cosmetic bottles, jars, makeup tools, visible needles, blood, exaggerated smoothing, text, labels, logos, watermark or before-and-after.",
+      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-a633231b-8344-4510-b91f-5c00be86520d.png",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/clinic-services/skin-boosters-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/clinic-services/skin-boosters-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/clinic-services/skin-boosters-1080x720.webp"
+        },
+        {
+          "width": 1920,
+          "height": 1280,
+          "path": "/assets/clinic-services/skin-boosters-1920x1280.webp"
+        }
+      ]
+    },
+    "microneedling": {
+      "route": "/service/microneedling",
+      "file": "service-manicures-and-pedicures.html",
+      "alt": "Professional microneedling treatment with a clinical pen",
+      "prompt": "Use case: photorealistic-natural. Asset type: illustrative clinical editorial photograph for an aesthetic and skincare clinic's Microneedling service card and opening page image. Generate ONE landscape 3:2 photograph, approximately 1536 x 1024. A relaxed adult woman in her late thirties with olive skin reclines on an off-white treatment couch, hair kept back with a simple ivory fabric headband, eyes gently closed. A professional practitioner's clean pale blue nitrile gloved hand holds an unbranded white cylindrical microneedling pen with a short transparent disposable cartridge, the small flat treatment tip resting gently on the outer cheek. Clearly recognisable professional microneedling equipment, no roller and no serum dropper. No blood, punctures, marked redness or injury. The face is the main subject, natural skin texture, realistic anatomy and hands. Bright airy skincare clinic, pale aqua and off-white softly blurred setting, soft natural daylight, elegant clinical editorial photography. Complete face and head centrally framed with upper shoulders and breathing room, keep the face and pen tip inside the central half of the width so both wide horizontal and narrow portrait crops retain the treatment. No text, labels, logos, watermarks, collage, cosmetics packaging or before-and-after.",
+      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-51dcfb02-7281-408e-890a-1c363720ad2e.png",
+      "exports": [
+        {
+          "width": 500,
+          "height": 333,
+          "path": "/assets/clinic-services/microneedling-500x333.webp"
+        },
+        {
+          "width": 800,
+          "height": 533,
+          "path": "/assets/clinic-services/microneedling-800x533.webp"
+        },
+        {
+          "width": 1080,
+          "height": 720,
+          "path": "/assets/clinic-services/microneedling-1080x720.webp"
+        },
+        {
+          "width": 1920,
+          "height": 1280,
+          "path": "/assets/clinic-services/microneedling-1920x1280.webp"
+        }
+      ]
+    },
+    "chemical-peels": {
+      "route": "/service/chemical-peels",
+      "file": "service-hair-styling.html",
+      "alt": "Clear peel solution applied during a chemical peel treatment",
+      "prompt": "Use case: photorealistic-natural. Asset type: illustrative editorial photograph for an aesthetic and skincare clinic's Chemical Peels service card and opening page image. Generate ONE portrait photograph in a 4:5 aspect ratio, approximately 1280 x 1600. A relaxed South Asian woman in her early forties lies comfortably on a pale clinic treatment couch with an ivory fabric headband keeping her dark hair away from her face. A professional practitioner wearing clean pale blue nitrile gloves applies a very thin transparent chemical peel solution to her outer cheek using a small white fan brush. The clear solution leaves only a subtle translucent sheen, not a coloured mask or makeup. She has natural skin texture, eyes gently closed, a calm expression. No blood, peeling skin, wounds or pronounced redness. Bright airy aesthetic clinic, ivory and pale aqua colour palette, navy scrubs visible only as a softly blurred background detail, soft diffused daylight, premium natural photographic quality and realistic anatomy. Frame the entire face and head with upper chest and breathing room; keep the face and brush close to the centre and in the middle portion vertically so a wide horizontal menu-card crop retains both. No text, labels, logos, watermark, cosmetics containers, coloured clay mask, collage or before-and-after.",
+      "generatedSource": "/Users/boyka777/.codex/generated_images/01a19cf3-a4d0-7ef3-b802-6e99bf7cf5d9/exec-abf529fb-872f-4266-a7f6-07955300af33.png",
+      "exports": [
+        {
+          "width": 500,
+          "height": 625,
+          "path": "/assets/clinic-services/chemical-peels-500x625.webp"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "path": "/assets/clinic-services/chemical-peels-800x1000.webp"
+        },
+        {
+          "width": 1080,
+          "height": 1350,
+          "path": "/assets/clinic-services/chemical-peels-1080x1350.webp"
+        },
+        {
+          "width": 1920,
+          "height": 2400,
+          "path": "/assets/clinic-services/chemical-peels-1920x2400.webp"
+        }
+      ]
+    }
+  }
+}

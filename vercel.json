@@ -1,0 +1,263 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/categories-1.html",
+      "destination": "/categories",
+      "permanent": true
+    },
+    {
+      "source": "/categories-1",
+      "destination": "/categories",
+      "permanent": true
+    },
+    {
+      "source": "/categories.html",
+      "destination": "/categories",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/products.html",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products-types.html",
+      "destination": "/skin-types",
+      "permanent": true
+    },
+    {
+      "source": "/products-types",
+      "destination": "/skin-types",
+      "permanent": true
+    },
+    {
+      "source": "/about-1.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-1",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-1.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-1",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/gallery.html",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/treatments.html",
+      "destination": "/treatments",
+      "permanent": true
+    },
+    {
+      "source": "/reviews.html",
+      "destination": "/approach",
+      "permanent": true
+    },
+    {
+      "source": "/reviews",
+      "destination": "/approach",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/form.html",
+      "destination": "/enquire",
+      "permanent": true
+    },
+    {
+      "source": "/form",
+      "destination": "/enquire",
+      "permanent": true
+    },
+    {
+      "source": "/category-skincare.html",
+      "destination": "/category/skincare",
+      "permanent": true
+    },
+    {
+      "source": "/category-hair-body.html",
+      "destination": "/category/moisturisers-care",
+      "permanent": true
+    },
+    {
+      "source": "/category/hair-body",
+      "destination": "/category/moisturisers-care",
+      "permanent": true
+    },
+    {
+      "source": "/category-make-up.html",
+      "destination": "/category/serums",
+      "permanent": true
+    },
+    {
+      "source": "/category/make-up",
+      "destination": "/category/serums",
+      "permanent": true
+    },
+    {
+      "source": "/category-beauty.html",
+      "destination": "/category/cleansing",
+      "permanent": true
+    },
+    {
+      "source": "/category/beauty",
+      "destination": "/category/cleansing",
+      "permanent": true
+    },
+    {
+      "source": "/service-dermal-fillers.html",
+      "destination": "/service/dermal-fillers",
+      "permanent": true
+    },
+    {
+      "source": "/service-makeup-application.html",
+      "destination": "/service/skin-boosters",
+      "permanent": true
+    },
+    {
+      "source": "/service/makeup-application",
+      "destination": "/service/skin-boosters",
+      "permanent": true
+    },
+    {
+      "source": "/service-manicures-and-pedicures.html",
+      "destination": "/service/microneedling",
+      "permanent": true
+    },
+    {
+      "source": "/service/manicures-and-pedicures",
+      "destination": "/service/microneedling",
+      "permanent": true
+    },
+    {
+      "source": "/service-hair-styling.html",
+      "destination": "/service/chemical-peels",
+      "permanent": true
+    },
+    {
+      "source": "/service/hair-styling",
+      "destination": "/service/chemical-peels",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/categories",
+      "destination": "/categories/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services/index.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/products/index.html"
+    },
+    {
+      "source": "/skin-types",
+      "destination": "/skin-types/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery/index.html"
+    },
+    {
+      "source": "/treatments",
+      "destination": "/treatments/index.html"
+    },
+    {
+      "source": "/approach",
+      "destination": "/approach/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/enquire",
+      "destination": "/enquire/index.html"
+    },
+    {
+      "source": "/category/skincare",
+      "destination": "/category/skincare/index.html"
+    },
+    {
+      "source": "/category/moisturisers-care",
+      "destination": "/category/moisturisers-care/index.html"
+    },
+    {
+      "source": "/category/serums",
+      "destination": "/category/serums/index.html"
+    },
+    {
+      "source": "/category/cleansing",
+      "destination": "/category/cleansing/index.html"
+    },
+    {
+      "source": "/service/dermal-fillers",
+      "destination": "/service/dermal-fillers/index.html"
+    },
+    {
+      "source": "/service/skin-boosters",
+      "destination": "/service/skin-boosters/index.html"
+    },
+    {
+      "source": "/service/microneedling",
+      "destination": "/service/microneedling/index.html"
+    },
+    {
+      "source": "/service/chemical-peels",
+      "destination": "/service/chemical-peels/index.html"
+    }
+  ]
+}

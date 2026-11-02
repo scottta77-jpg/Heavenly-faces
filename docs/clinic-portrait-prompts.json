@@ -1,0 +1,235 @@
+{
+  "generatedWith": "OpenAI built-in image_gen",
+  "visualReference": "https://harleystreetdermal.co.uk/",
+  "purpose": "Illustrative natural-skin portraits. These are not clinical before/after results or photographs of clinic staff or patients.",
+  "assets": {
+    "a": {
+      "prompt": "Use case: photorealistic-natural. Asset type: portrait photograph for an aesthetic and skincare clinic website. Create ONE photorealistic editorial portrait, vertical 2:3 aspect ratio, approximately 1024 x 1536. Subject: a woman aged about 35, fair skin with a few natural light freckles, brown hair loosely pulled back, calm confident expression, slight relaxed smile, looking toward camera with head turned just a little. Her healthy clear skin is the subject, with realistic pores and subtle fine lines, natural lips and natural brows. Frame from the upper chest to above the head, keep the complete face and forehead centrally positioned with a little breathing room around the head so it can be cropped into web cards. Simple ivory scoop-neck top, no accessories competing with the face. Background: softly blurred pale aqua and off-white, light airy premium skincare-clinic mood. Soft diffused daylight, neutral colour grading, natural photographic skin texture, elegant and welcoming. Hands fully out of frame. No makeup application, no brushes, no products or bottles, no devices, no procedures, no medical staff. No heavy lipstick, eyeshadow, thick mascara or foundation. No airbrushing or plastic skin. No before/after composition, no text, logos, watermark or collage.",
+      "master": "/assets/clinic-portraits/heavenly-skin-a-1024x1536.webp"
+    },
+    "b": {
+      "prompt": "Use case: photorealistic-natural. Asset type: aesthetic and skincare clinic website photograph. Create ONE horizontal landscape 3:2 editorial portrait, approximately 1536 x 1024. A beautiful Black woman aged around 32 with deep brown skin and short natural textured hair, warm relaxed smile and healthy luminous skin with realistic pores and subtle variation in tone. She has natural lips and brows with a barely-there, fresh-faced look. Head and shoulders, face fully visible and centrally framed with clean breathing room to either side, a soft three-quarter turn towards camera. Simple ivory crew-neck top. Hands completely out of frame. Light airy off-white and very pale blue-grey background, softly blurred contemporary clinic-like interior, diffused daylight and natural photographic colour. Premium, calm, welcoming skincare photography. No product, makeup container or makeup application, no brush, hair styling, device, practitioner or procedure. No heavy lipstick, eyeshadow, contouring, artificial skin smoothing, text, logos, watermark, collage, or before-and-after presentation.",
+      "master": "/assets/clinic-portraits/heavenly-skin-b-1536x1024.webp"
+    },
+    "c": {
+      "prompt": "Use case: photorealistic-natural. Asset type: natural skin portrait for an aesthetic clinic website. Generate ONE horizontal landscape 3:2 photographic image, approximately 1536 x 1024. A beautiful East Asian woman aged about 42, dark straight hair neatly tucked behind her ears, looking slightly past the camera with a serene expression. Healthy clear glowing skin with subtle real pores and fine lines, unpainted natural lips, natural brows, no dramatic cosmetics. Frame the complete head and shoulders with a modest ivory top and a little extra space on each side, face in the centre, gently turned three-quarter view, do not crop forehead or chin. Airy pale stone and cool off-white background with a subtle pale aqua tone, natural soft window light, clean editorial skincare aesthetic and realistic colour. Hands out of frame. No products, jars, bottles, lipstick, brushes, treatment devices, medical staff or procedures. No exaggerated retouching, plastic-looking skin, text, logos, watermark, split-screen, before/after or collage.",
+      "master": "/assets/clinic-portraits/heavenly-skin-c-1536x1024.webp"
+    },
+    "d": {
+      "prompt": "Use case: photorealistic-natural. Asset type: portrait photography for a premium aesthetic and skincare clinic. Make ONE vertical 2:3 portrait, approximately 1024 x 1536, of a beautiful South Asian woman aged around 45, medium warm brown skin, dark hair loosely tied back, calm slight smile, healthy natural-looking skin with real pores and delicate expression lines, natural lips and brows. Frame head and upper chest, simple cream V-neck top, complete face and forehead visible in the central upper half of the frame, enough space around her head for a 4:5 web crop. She is turned slightly to the side and looking towards camera. Soft daylight from a large window, bright cool off-white softly blurred background with a faint aqua hint, elegant natural editorial skincare photography. Hands completely outside the frame. No makeup application or cosmetics, no product containers, no hair brush, instruments, clinician or procedures. No heavy lipstick, eyeshadow, contouring or plastic-smooth skin. No writing, branding, watermark, collage or before/after composition.",
+      "master": "/assets/clinic-portraits/heavenly-skin-d-1024x1536.webp"
+    },
+    "e": {
+      "prompt": "Use case: photorealistic-natural. Asset type: aesthetic clinic skin and facial-profile website image. Generate ONE horizontal landscape 3:2 editorial photograph, approximately 1536 x 1024. A beautiful woman in her late thirties with olive skin and dark hair pulled back, shown in a gentle three-quarter profile with her complete head, cheek, natural lips and jawline visible. Calm relaxed expression, healthy radiant skin with realistic pores and fine texture, a natural bare-faced appearance, natural lips without lipstick or gloss. Simple ivory top, no hands in frame. Subject centrally framed with room around the face to suit landscape gallery and responsive crops. Bright pale neutral grey and off-white softly blurred background, soft diffused daylight, natural colour grading, calm premium skincare clinic visual. No lipstick, lip balm, makeup applicator, product bottles or jars, devices, medical staff or procedures. No before/after, no beauty filters or over-smoothed skin, no text, logos, watermark or collage.",
+      "master": "/assets/clinic-portraits/heavenly-skin-e-1536x1024.webp"
+    },
+    "f": {
+      "prompt": "Use case: photorealistic-natural. Asset type: inclusive natural-skin portrait for an aesthetic and skincare clinic website. Create ONE horizontal landscape 3:2 photograph, approximately 1536 x 1024. A beautiful Black woman around 50 with warm medium-dark skin, softly styled natural dark hair, a gentle confident closed-mouth smile. Show healthy well-cared-for skin with true texture, subtle expression lines and natural variation, natural eyebrows and lips, understated fresh-faced appearance. Frame the entire head and shoulders in the centre with breathing room to the sides and above the head, wearing a simple off-white top, both hands out of frame. Soft flattering window daylight, clean pale off-white background with a very light blue-grey cast, bright airy editorial skincare-clinic mood, realistic photographic detail. No product being held or applied, no jars or bottles, makeup tools, clinical instruments, medical staff or procedures. No heavy makeup, heavy lipstick, over-retouching, before-and-after comparison, text, logos, watermark or collage.",
+      "master": "/assets/clinic-portraits/heavenly-skin-f-1536x1024.webp"
+    }
+  },
+  "exports": [
+    {
+      "key": "a",
+      "width": 1024,
+      "height": 1536,
+      "path": "/assets/clinic-portraits/heavenly-skin-a-1024x1536.webp"
+    },
+    {
+      "key": "b",
+      "width": 1536,
+      "height": 1024,
+      "path": "/assets/clinic-portraits/heavenly-skin-b-1536x1024.webp"
+    },
+    {
+      "key": "c",
+      "width": 1536,
+      "height": 1024,
+      "path": "/assets/clinic-portraits/heavenly-skin-c-1536x1024.webp"
+    },
+    {
+      "key": "d",
+      "width": 1024,
+      "height": 1536,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-1024x1536.webp"
+    },
+    {
+      "key": "e",
+      "width": 1536,
+      "height": 1024,
+      "path": "/assets/clinic-portraits/heavenly-skin-e-1536x1024.webp"
+    },
+    {
+      "key": "f",
+      "width": 1536,
+      "height": 1024,
+      "path": "/assets/clinic-portraits/heavenly-skin-f-1536x1024.webp"
+    },
+    {
+      "key": "e",
+      "width": 1920,
+      "height": 1280,
+      "path": "/assets/clinic-portraits/heavenly-skin-e-1920x1280.webp"
+    },
+    {
+      "key": "e",
+      "width": 1080,
+      "height": 720,
+      "path": "/assets/clinic-portraits/heavenly-skin-e-1080x720.webp"
+    },
+    {
+      "key": "e",
+      "width": 500,
+      "height": 333,
+      "path": "/assets/clinic-portraits/heavenly-skin-e-500x333.webp"
+    },
+    {
+      "key": "e",
+      "width": 800,
+      "height": 533,
+      "path": "/assets/clinic-portraits/heavenly-skin-e-800x533.webp"
+    },
+    {
+      "key": "f",
+      "width": 500,
+      "height": 333,
+      "path": "/assets/clinic-portraits/heavenly-skin-f-500x333.webp"
+    },
+    {
+      "key": "f",
+      "width": 800,
+      "height": 533,
+      "path": "/assets/clinic-portraits/heavenly-skin-f-800x533.webp"
+    },
+    {
+      "key": "f",
+      "width": 1920,
+      "height": 1280,
+      "path": "/assets/clinic-portraits/heavenly-skin-f-1920x1280.webp"
+    },
+    {
+      "key": "b",
+      "width": 1080,
+      "height": 720,
+      "path": "/assets/clinic-portraits/heavenly-skin-b-1080x720.webp"
+    },
+    {
+      "key": "b",
+      "width": 500,
+      "height": 333,
+      "path": "/assets/clinic-portraits/heavenly-skin-b-500x333.webp"
+    },
+    {
+      "key": "b",
+      "width": 800,
+      "height": 533,
+      "path": "/assets/clinic-portraits/heavenly-skin-b-800x533.webp"
+    },
+    {
+      "key": "b",
+      "width": 1920,
+      "height": 1280,
+      "path": "/assets/clinic-portraits/heavenly-skin-b-1920x1280.webp"
+    },
+    {
+      "key": "c",
+      "width": 1080,
+      "height": 720,
+      "path": "/assets/clinic-portraits/heavenly-skin-c-1080x720.webp"
+    },
+    {
+      "key": "c",
+      "width": 500,
+      "height": 333,
+      "path": "/assets/clinic-portraits/heavenly-skin-c-500x333.webp"
+    },
+    {
+      "key": "c",
+      "width": 800,
+      "height": 533,
+      "path": "/assets/clinic-portraits/heavenly-skin-c-800x533.webp"
+    },
+    {
+      "key": "c",
+      "width": 1920,
+      "height": 1280,
+      "path": "/assets/clinic-portraits/heavenly-skin-c-1920x1280.webp"
+    },
+    {
+      "key": "a",
+      "width": 500,
+      "height": 750,
+      "path": "/assets/clinic-portraits/heavenly-skin-a-500x750.webp"
+    },
+    {
+      "key": "a",
+      "width": 800,
+      "height": 1200,
+      "path": "/assets/clinic-portraits/heavenly-skin-a-800x1200.webp"
+    },
+    {
+      "key": "a",
+      "width": 1280,
+      "height": 1920,
+      "path": "/assets/clinic-portraits/heavenly-skin-a-1280x1920.webp"
+    },
+    {
+      "key": "d",
+      "width": 500,
+      "height": 750,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-500x750.webp"
+    },
+    {
+      "key": "d",
+      "width": 800,
+      "height": 1200,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-800x1200.webp"
+    },
+    {
+      "key": "d",
+      "width": 1280,
+      "height": 1920,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-1280x1920.webp"
+    },
+    {
+      "key": "d",
+      "width": 1080,
+      "height": 1350,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-1080x1350.webp"
+    },
+    {
+      "key": "d",
+      "width": 500,
+      "height": 625,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-500x625.webp"
+    },
+    {
+      "key": "d",
+      "width": 800,
+      "height": 1000,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-800x1000.webp"
+    },
+    {
+      "key": "d",
+      "width": 1920,
+      "height": 2400,
+      "path": "/assets/clinic-portraits/heavenly-skin-d-1920x2400.webp"
+    },
+    {
+      "key": "f",
+      "width": 1080,
+      "height": 720,
+      "path": "/assets/clinic-portraits/heavenly-skin-f-1080x720.webp"
+    }
+  ],
+  "replacedPhotoFamilies": {
+    "7321241": "e",
+    "7440057": "d",
+    "8128675": "b",
+    "8128688": "d",
+    "8129897": "a",
+    "8129902": "a",
+    "8129904": "c",
+    "9775102": "f"
+  }
+}

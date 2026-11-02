@@ -12,7 +12,7 @@ const PRODUCTS = [
     name: 'Eye gel',
     price: 19.00,
     priceFormatted: '$ 19.00 USD',
-    image: '/assets/63bab3c727acad1be85e17ec/63bab3c727acad186d5e19ef_pexels-ron-lach-8128688.jpg',
+    image: '/assets/clinic-portraits/heavenly-skin-d-1280x1920.webp',
     category: 'Shampoos',
     type: 'Face Care'
   },
